@@ -25,5 +25,32 @@ namespace CDURechazos.Modulos
         public static int TipoActividad;
         public static int TipoPermiso;
         public static int ModoConexion = 0;
+
+        public void SetUserSession(int userID, string numEmpleado, string nombre)
+        {
+            basConfiguracion.UserID = userID;
+            basConfiguracion.NumEmpleado = numEmpleado;
+            basConfiguracion.Nombre = nombre;
+        }
+
+        public void SetConfig(string rutaArchivos, bool envioNominas, bool sincroEmpleados, string hostCorreo, int puerto, string correo, string contrasena)
+        {
+            basConfiguracion.RutaArchivos = rutaArchivos;
+            basConfiguracion.EnvioNominas = envioNominas;
+            basConfiguracion.SincronizarEmpleados = sincroEmpleados;
+            basConfiguracion.HostCorreo = hostCorreo;
+            basConfiguracion.Puerto = puerto;
+            basConfiguracion.CorreoEnvio = correo;
+            basConfiguracion.ContrasenaCorreo = contrasena;
+        }
+
+        // Método opcional para limpiar la información del usuario
+        public void ClearUserSession()
+        {
+            basConfiguracion.UserID = 0;
+            basConfiguracion.NumEmpleado = string.Empty;
+            basConfiguracion.Nombre = string.Empty;
+        }
+
     }
 }

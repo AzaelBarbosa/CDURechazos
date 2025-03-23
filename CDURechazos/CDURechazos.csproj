@@ -133,6 +133,9 @@
     <Compile Include="Modulos\basFunctions.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Catalogos\frmFallas.resx">
+      <DependentUpon>frmFallas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Catalogos\frmSubFallas.resx">
       <DependentUpon>frmSubFallas.cs</DependentUpon>
     </EmbeddedResource>

@@ -92,18 +92,21 @@
             this.usuariosToolStripMenuItem.Name = "usuariosToolStripMenuItem";
             this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.usuariosToolStripMenuItem.Text = "Usuarios";
+            this.usuariosToolStripMenuItem.Click += new System.EventHandler(this.usuariosToolStripMenuItem_Click);
             // 
             // fallasToolStripMenuItem
             // 
             this.fallasToolStripMenuItem.Name = "fallasToolStripMenuItem";
             this.fallasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.fallasToolStripMenuItem.Text = "Fallas";
+            this.fallasToolStripMenuItem.Click += new System.EventHandler(this.fallasToolStripMenuItem_Click);
             // 
             // subfallaToolStripMenuItem
             // 
             this.subfallaToolStripMenuItem.Name = "subfallaToolStripMenuItem";
             this.subfallaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.subfallaToolStripMenuItem.Text = "Subfalla";
+            this.subfallaToolStripMenuItem.Click += new System.EventHandler(this.subfallaToolStripMenuItem_Click);
             // 
             // reportesToolStripMenuItem
             // 
@@ -122,6 +125,7 @@
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
             this.salirToolStripMenuItem.Size = new System.Drawing.Size(41, 20);
             this.salirToolStripMenuItem.Text = "Salir";
+            this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
             // toolStripStatusLabel1
             // 

@@ -82,11 +82,13 @@ namespace CDURechazos
 
                 MessageBox.Show("Bienvenido " + drPaso[0]["NombreUsuario"], "Copeland", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                //basGlobals.SetUserSession(
-                //    Convert.ToInt32(drPaso[0]["IdUsuario"]),
-                //    0,
-                //    drPaso[0]["NombreUsuario"].ToString()
-                //);
+
+                basConfiguracion basConfig = new basConfiguracion();
+                basConfig.SetUserSession(
+                   Convert.ToInt32(drPaso[0]["IdUsuario"]),
+                    "",
+                    drPaso[0]["NombreUsuario"].ToString()
+                );
 
                 this.Hide();
                 frmM.Show();
