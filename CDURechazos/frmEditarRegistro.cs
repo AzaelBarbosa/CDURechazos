@@ -7,14 +7,104 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CDURechazos.Clases;
+using CDURechazos.Modulos;
 
 namespace CDURechazos
 {
     public partial class frmEditarRegistro: Form
     {
+        public int intEditar;
+        public int idRegistro;
         public frmEditarRegistro()
         {
             InitializeComponent();
+        }
+
+        private void btCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void frmEditarRegistro_Load(object sender, EventArgs e)
+        {
+            CargarComboFalla();
+        }
+
+        private void CargarComboFalla()
+        {
+            DataTable dtFalla;
+            if (basConfiguracion.ModoConexion == 1)
+            {
+                //dtFalla = sqlServer.ExecSQLReturnDT("SELECT * FROM Fallas", "Fallas");
+                //cboFalla.DataSource = dtFalla;
+                cboFalla.DisplayMember = "Descripcion";
+                cboFalla.ValueMember = "IdFalla";
+            }
+            else
+            {
+                dtFalla = PgSQLHelper.ExecSQLReturnDT(@"SELECT * FROM public.""Fallas""", "Fallas");
+                cboFalla.DataSource = dtFalla;
+                cboFalla.DisplayMember = "Descripcion";
+                cboFalla.ValueMember = "IdFalla";
+            }
+        }
+
+        private void CargarComboSubfalla()
+        {
+            DataTable dtSubFalla;
+            if (basConfiguracion.ModoConexion == 1)
+            {
+                //dtSubFalla = sqlServer.ExecSQLReturnDT("SELECT * FROM SubFallas WHERE idFalla = " + cboFalla.SelectedValue, "SubFallas");
+                //cboPerfil.DataSource = dtSubFalla;
+                cboSubfalla.DisplayMember = "Descripcion";
+                cboSubfalla.ValueMember = "IdSubFalla";
+            }
+            else
+            {
+                dtSubFalla = PgSQLHelper.ExecSQLReturnDT(@"SELECT * FROM public.""SubFallas"" WHERE ""idFalla"" = " + (cboFalla.ValueMember == "" ? 0 : cboFalla.SelectedValue), "SubFallas");
+                cboSubfalla.DataSource = dtSubFalla;
+                cboSubfalla.DisplayMember = "Descripcion";
+                cboSubfalla.ValueMember = "IdSubFalla";
+            }
+        }
+
+        private void cboFalla_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            CargarComboSubfalla();
+        }
+
+        private void btAceptar_Click(object sender, EventArgs e)
+        {
+            string sSQL;
+
+            if (basConfiguracion.ModoConexion == 1)
+            {
+                if (intEditar == 0)
+                {
+                    sSQL = "INSERT INTO RegistroFallas (Serie, Codigo, Nombre, idFalla, idSubFalla) VALUES('" + txSerie.Text + "','" + txCodigo.Text + "'" + txNombre.Text + "," + cboFalla.SelectedValue + "," + cboSubfalla.SelectedValue + ")";
+                    //sqlServer.ExecSQL(sSQL);
+                }
+                else
+                {
+                    sSQL = "UPDATE RegistroFallas SET Serie = '" + txSerie.Text + "', Codigo = '" + txCodigo.Text + "', Nombre = '" + txNombre.Text + "', idFalla = " + cboFalla.SelectedValue + ", idSubFalla = " + cboSubfalla.SelectedValue + " WHERE id = " + idRegistro;
+                    //sqlServer.ExecSQL(sSQL);
+                }
+            }
+            else
+            {
+                if (intEditar == 0)
+                {
+                    sSQL = "INSERT INTO public.\"RegistroFallas\" (\"Serie\", \"Codigo\", \"Nombre\", \"idFalla\", \"idSubFalla\") VALUES('" + txSerie.Text + "','" + txCodigo.Text + "','" + txNombre.Text + "'," + cboFalla.SelectedValue + "," + cboSubfalla.SelectedValue + ")";
+                    PgSQLHelper.ExecSQL(sSQL);
+                }
+                else
+                {
+                    sSQL = "UPDATE public.\"RegistroFallas\" SET \"Serie\" = '" + txSerie.Text + "', \"Codigo\" = '" + txCodigo.Text + "', \"Nombre\" = '" + txNombre.Text + "', \"idFalla\" = " + cboFalla.SelectedValue + ", \"idSubFalla\" = " + cboSubfalla.SelectedValue + " WHERE \"id\" = " + idRegistro;
+                    PgSQLHelper.ExecSQL(sSQL);
+                }
+            }
+            this.Close();
         }
     }
 }

@@ -34,6 +34,7 @@
             this.usuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fallasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.subfallaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.perfilesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aplicacionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.configuracionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -42,7 +43,7 @@
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.tlUsuario = new System.Windows.Forms.ToolStripStatusLabel();
-            this.perfilesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exportarExcelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -68,6 +69,7 @@
             this.registroToolStripMenuItem.Name = "registroToolStripMenuItem";
             this.registroToolStripMenuItem.Size = new System.Drawing.Size(62, 22);
             this.registroToolStripMenuItem.Text = "Registro";
+            this.registroToolStripMenuItem.Click += new System.EventHandler(this.registroToolStripMenuItem_Click);
             // 
             // catalogosToolStripMenuItem
             // 
@@ -83,26 +85,35 @@
             // usuariosToolStripMenuItem
             // 
             this.usuariosToolStripMenuItem.Name = "usuariosToolStripMenuItem";
-            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(119, 22);
             this.usuariosToolStripMenuItem.Text = "Usuarios";
             this.usuariosToolStripMenuItem.Click += new System.EventHandler(this.usuariosToolStripMenuItem_Click);
             // 
             // fallasToolStripMenuItem
             // 
             this.fallasToolStripMenuItem.Name = "fallasToolStripMenuItem";
-            this.fallasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.fallasToolStripMenuItem.Size = new System.Drawing.Size(119, 22);
             this.fallasToolStripMenuItem.Text = "Fallas";
             this.fallasToolStripMenuItem.Click += new System.EventHandler(this.fallasToolStripMenuItem_Click);
             // 
             // subfallaToolStripMenuItem
             // 
             this.subfallaToolStripMenuItem.Name = "subfallaToolStripMenuItem";
-            this.subfallaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.subfallaToolStripMenuItem.Size = new System.Drawing.Size(119, 22);
             this.subfallaToolStripMenuItem.Text = "Subfalla";
             this.subfallaToolStripMenuItem.Click += new System.EventHandler(this.subfallaToolStripMenuItem_Click);
             // 
+            // perfilesToolStripMenuItem
+            // 
+            this.perfilesToolStripMenuItem.Name = "perfilesToolStripMenuItem";
+            this.perfilesToolStripMenuItem.Size = new System.Drawing.Size(119, 22);
+            this.perfilesToolStripMenuItem.Text = "Perfiles";
+            this.perfilesToolStripMenuItem.Click += new System.EventHandler(this.perfilesToolStripMenuItem_Click);
+            // 
             // reportesToolStripMenuItem
             // 
+            this.reportesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.exportarExcelToolStripMenuItem});
             this.reportesToolStripMenuItem.Name = "reportesToolStripMenuItem";
             this.reportesToolStripMenuItem.Size = new System.Drawing.Size(65, 22);
             this.reportesToolStripMenuItem.Text = "Reportes";
@@ -119,14 +130,14 @@
             // configuracionToolStripMenuItem
             // 
             this.configuracionToolStripMenuItem.Name = "configuracionToolStripMenuItem";
-            this.configuracionToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.configuracionToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
             this.configuracionToolStripMenuItem.Text = "Configuracion";
             this.configuracionToolStripMenuItem.Click += new System.EventHandler(this.configuracionToolStripMenuItem_Click);
             // 
             // cerrarSesionToolStripMenuItem1
             // 
             this.cerrarSesionToolStripMenuItem1.Name = "cerrarSesionToolStripMenuItem1";
-            this.cerrarSesionToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.cerrarSesionToolStripMenuItem1.Size = new System.Drawing.Size(150, 22);
             this.cerrarSesionToolStripMenuItem1.Text = "Cerrar Sesion";
             this.cerrarSesionToolStripMenuItem1.Click += new System.EventHandler(this.cerrarSesionToolStripMenuItem1_Click);
             // 
@@ -162,12 +173,11 @@
             this.tlUsuario.Size = new System.Drawing.Size(57, 17);
             this.tlUsuario.Text = "lbUsuario";
             // 
-            // perfilesToolStripMenuItem
+            // exportarExcelToolStripMenuItem
             // 
-            this.perfilesToolStripMenuItem.Name = "perfilesToolStripMenuItem";
-            this.perfilesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.perfilesToolStripMenuItem.Text = "Perfiles";
-            this.perfilesToolStripMenuItem.Click += new System.EventHandler(this.perfilesToolStripMenuItem_Click);
+            this.exportarExcelToolStripMenuItem.Name = "exportarExcelToolStripMenuItem";
+            this.exportarExcelToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exportarExcelToolStripMenuItem.Text = "Exportar Excel";
             // 
             // frmMain
             // 
@@ -210,5 +220,6 @@
         private System.Windows.Forms.ToolStripMenuItem configuracionToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cerrarSesionToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem perfilesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem exportarExcelToolStripMenuItem;
     }
 }

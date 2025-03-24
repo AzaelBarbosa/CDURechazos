@@ -115,9 +115,10 @@
             // 
             // btNewPerfil
             // 
+            this.btNewPerfil.Image = global::CDURechazos.Properties.Resources._1486564407_plus_green_81521;
             this.btNewPerfil.Location = new System.Drawing.Point(12, 12);
             this.btNewPerfil.Name = "btNewPerfil";
-            this.btNewPerfil.Size = new System.Drawing.Size(43, 37);
+            this.btNewPerfil.Size = new System.Drawing.Size(42, 42);
             this.btNewPerfil.TabIndex = 3;
             this.btNewPerfil.UseVisualStyleBackColor = true;
             this.btNewPerfil.Click += new System.EventHandler(this.btNewPerfil_Click);

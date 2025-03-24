@@ -53,11 +53,9 @@
             this.gbSubFalla.Controls.Add(this.label2);
             this.gbSubFalla.Controls.Add(this.btCancelar);
             this.gbSubFalla.Controls.Add(this.btAceptar);
-            this.gbSubFalla.Location = new System.Drawing.Point(15, 476);
-            this.gbSubFalla.Margin = new System.Windows.Forms.Padding(6);
+            this.gbSubFalla.Location = new System.Drawing.Point(8, 248);
             this.gbSubFalla.Name = "gbSubFalla";
-            this.gbSubFalla.Padding = new System.Windows.Forms.Padding(6);
-            this.gbSubFalla.Size = new System.Drawing.Size(836, 284);
+            this.gbSubFalla.Size = new System.Drawing.Size(418, 148);
             this.gbSubFalla.TabIndex = 5;
             this.gbSubFalla.TabStop = false;
             this.gbSubFalla.Text = "Alta SubFalla";
@@ -65,57 +63,53 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(77, 54);
-            this.label4.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label4.Location = new System.Drawing.Point(38, 28);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(65, 25);
+            this.label4.Size = new System.Drawing.Size(32, 13);
             this.label4.TabIndex = 9;
             this.label4.Text = "Falla:";
             // 
             // cboFallas
             // 
             this.cboFallas.FormattingEnabled = true;
-            this.cboFallas.Location = new System.Drawing.Point(159, 51);
+            this.cboFallas.Location = new System.Drawing.Point(80, 27);
+            this.cboFallas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cboFallas.Name = "cboFallas";
-            this.cboFallas.Size = new System.Drawing.Size(383, 33);
+            this.cboFallas.Size = new System.Drawing.Size(194, 21);
             this.cboFallas.TabIndex = 8;
             // 
             // chEstatus
             // 
             this.chEstatus.AutoSize = true;
-            this.chEstatus.Location = new System.Drawing.Point(167, 146);
-            this.chEstatus.Margin = new System.Windows.Forms.Padding(6);
+            this.chEstatus.Location = new System.Drawing.Point(84, 76);
             this.chEstatus.Name = "chEstatus";
-            this.chEstatus.Size = new System.Drawing.Size(103, 29);
+            this.chEstatus.Size = new System.Drawing.Size(56, 17);
             this.chEstatus.TabIndex = 6;
             this.chEstatus.Text = "Activo";
             this.chEstatus.UseVisualStyleBackColor = true;
             // 
             // txNombre
             // 
-            this.txNombre.Location = new System.Drawing.Point(159, 97);
-            this.txNombre.Margin = new System.Windows.Forms.Padding(6);
+            this.txNombre.Location = new System.Drawing.Point(80, 50);
             this.txNombre.Name = "txNombre";
-            this.txNombre.Size = new System.Drawing.Size(506, 31);
+            this.txNombre.Size = new System.Drawing.Size(255, 20);
             this.txNombre.TabIndex = 5;
             this.txNombre.TextChanged += new System.EventHandler(this.txNombre_TextChanged);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(53, 102);
-            this.label2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label2.Location = new System.Drawing.Point(26, 53);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(93, 25);
+            this.label2.Size = new System.Drawing.Size(47, 13);
             this.label2.TabIndex = 3;
             this.label2.Text = "Nombre:";
             // 
             // btCancelar
             // 
-            this.btCancelar.Location = new System.Drawing.Point(423, 215);
-            this.btCancelar.Margin = new System.Windows.Forms.Padding(6);
+            this.btCancelar.Location = new System.Drawing.Point(212, 112);
             this.btCancelar.Name = "btCancelar";
-            this.btCancelar.Size = new System.Drawing.Size(150, 44);
+            this.btCancelar.Size = new System.Drawing.Size(75, 23);
             this.btCancelar.TabIndex = 1;
             this.btCancelar.Text = "Cancelar";
             this.btCancelar.UseVisualStyleBackColor = true;
@@ -123,10 +117,9 @@
             // 
             // btAceptar
             // 
-            this.btAceptar.Location = new System.Drawing.Point(209, 215);
-            this.btAceptar.Margin = new System.Windows.Forms.Padding(6);
+            this.btAceptar.Location = new System.Drawing.Point(104, 112);
             this.btAceptar.Name = "btAceptar";
-            this.btAceptar.Size = new System.Drawing.Size(150, 44);
+            this.btAceptar.Size = new System.Drawing.Size(75, 23);
             this.btAceptar.TabIndex = 0;
             this.btAceptar.Text = "Aceptar";
             this.btAceptar.UseVisualStyleBackColor = true;
@@ -137,21 +130,20 @@
             this.dgvFallas.AllowUserToAddRows = false;
             this.dgvFallas.AllowUserToDeleteRows = false;
             this.dgvFallas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvFallas.Location = new System.Drawing.Point(28, 152);
-            this.dgvFallas.Margin = new System.Windows.Forms.Padding(6);
+            this.dgvFallas.Location = new System.Drawing.Point(14, 79);
             this.dgvFallas.Name = "dgvFallas";
             this.dgvFallas.ReadOnly = true;
             this.dgvFallas.RowHeadersWidth = 82;
-            this.dgvFallas.Size = new System.Drawing.Size(823, 294);
+            this.dgvFallas.Size = new System.Drawing.Size(412, 153);
             this.dgvFallas.TabIndex = 4;
             this.dgvFallas.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSubFallas_CellContentDoubleClick);
             // 
             // btNewSubFalla
             // 
-            this.btNewSubFalla.Location = new System.Drawing.Point(15, 15);
-            this.btNewSubFalla.Margin = new System.Windows.Forms.Padding(6);
+            this.btNewSubFalla.Image = global::CDURechazos.Properties.Resources._1486564407_plus_green_81521;
+            this.btNewSubFalla.Location = new System.Drawing.Point(8, 8);
             this.btNewSubFalla.Name = "btNewSubFalla";
-            this.btNewSubFalla.Size = new System.Drawing.Size(86, 71);
+            this.btNewSubFalla.Size = new System.Drawing.Size(42, 42);
             this.btNewSubFalla.TabIndex = 3;
             this.btNewSubFalla.UseVisualStyleBackColor = true;
             this.btNewSubFalla.Click += new System.EventHandler(this.btNewSubFalla_Click);
@@ -159,33 +151,32 @@
             // cboFallasFiltro
             // 
             this.cboFallasFiltro.FormattingEnabled = true;
-            this.cboFallasFiltro.Location = new System.Drawing.Point(97, 107);
+            this.cboFallasFiltro.Location = new System.Drawing.Point(48, 56);
+            this.cboFallasFiltro.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cboFallasFiltro.Name = "cboFallasFiltro";
-            this.cboFallasFiltro.Size = new System.Drawing.Size(383, 33);
+            this.cboFallasFiltro.Size = new System.Drawing.Size(194, 21);
             this.cboFallasFiltro.TabIndex = 6;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(23, 110);
-            this.label3.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label3.Location = new System.Drawing.Point(12, 57);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(65, 25);
+            this.label3.Size = new System.Drawing.Size(32, 13);
             this.label3.TabIndex = 7;
             this.label3.Text = "Falla:";
             // 
             // frmSubFallas
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(869, 770);
+            this.ClientSize = new System.Drawing.Size(434, 400);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.cboFallasFiltro);
             this.Controls.Add(this.gbSubFalla);
             this.Controls.Add(this.dgvFallas);
             this.Controls.Add(this.btNewSubFalla);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Margin = new System.Windows.Forms.Padding(6);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmSubFallas";

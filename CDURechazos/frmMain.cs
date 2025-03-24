@@ -78,5 +78,12 @@ namespace CDURechazos
             frmPerfiles.MdiParent = this;
             frmPerfiles.Show();
         }
+
+        private void registroToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmRegistros frmRegistros = new frmRegistros();
+            frmRegistros.MdiParent = this;
+            frmRegistros.Show();
+        }
     }
 }

@@ -30,6 +30,7 @@
         {
             this.dgvUsuarios = new System.Windows.Forms.DataGridView();
             this.gbUsuarios = new System.Windows.Forms.GroupBox();
+            this.chResetear = new System.Windows.Forms.CheckBox();
             this.cboPerfil = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.chEstatus = new System.Windows.Forms.CheckBox();
@@ -40,7 +41,6 @@
             this.btCancelar = new System.Windows.Forms.Button();
             this.btAceptar = new System.Windows.Forms.Button();
             this.btnuevo = new System.Windows.Forms.Button();
-            this.chResetear = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).BeginInit();
             this.gbUsuarios.SuspendLayout();
             this.SuspendLayout();
@@ -77,6 +77,16 @@
             this.gbUsuarios.TabIndex = 1;
             this.gbUsuarios.TabStop = false;
             this.gbUsuarios.Text = "Alta Usuario";
+            // 
+            // chResetear
+            // 
+            this.chResetear.AutoSize = true;
+            this.chResetear.Location = new System.Drawing.Point(383, 59);
+            this.chResetear.Name = "chResetear";
+            this.chResetear.Size = new System.Drawing.Size(126, 17);
+            this.chResetear.TabIndex = 20;
+            this.chResetear.Text = "Resetear Contraseña";
+            this.chResetear.UseVisualStyleBackColor = true;
             // 
             // cboPerfil
             // 
@@ -161,22 +171,13 @@
             // 
             // btnuevo
             // 
-            this.btnuevo.Location = new System.Drawing.Point(12, 15);
+            this.btnuevo.Image = global::CDURechazos.Properties.Resources._1486564407_plus_green_81521;
+            this.btnuevo.Location = new System.Drawing.Point(12, 4);
             this.btnuevo.Name = "btnuevo";
-            this.btnuevo.Size = new System.Drawing.Size(36, 30);
+            this.btnuevo.Size = new System.Drawing.Size(42, 42);
             this.btnuevo.TabIndex = 2;
             this.btnuevo.UseVisualStyleBackColor = true;
             this.btnuevo.Click += new System.EventHandler(this.btnuevo_Click);
-            // 
-            // chResetear
-            // 
-            this.chResetear.AutoSize = true;
-            this.chResetear.Location = new System.Drawing.Point(383, 59);
-            this.chResetear.Name = "chResetear";
-            this.chResetear.Size = new System.Drawing.Size(126, 17);
-            this.chResetear.TabIndex = 20;
-            this.chResetear.Text = "Resetear Contraseña";
-            this.chResetear.UseVisualStyleBackColor = true;
             // 
             // frmUsuarios
             // 
