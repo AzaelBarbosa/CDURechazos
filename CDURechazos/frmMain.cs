@@ -37,7 +37,7 @@ namespace CDURechazos
         {
             frmUsuarios frmUsuarios = new frmUsuarios();
             frmUsuarios.MdiParent = this;
-            frmUsuarios.Height = 255;
+            frmUsuarios.Height = 322;
             frmUsuarios.Show();
         }
 
@@ -55,6 +55,28 @@ namespace CDURechazos
             frmSubFallas.MdiParent = this;
             frmSubFallas.Height = 255;
             frmSubFallas.Show();
+        }
+
+        private void cerrarSesionToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            frmLogin frmLogin2 = new frmLogin();
+            frmLogin2.Show();
+        }
+
+        private void configuracionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmConfiguracion frmConfiguracion = new frmConfiguracion();
+            frmConfiguracion.MdiParent = this;
+            frmConfiguracion.Show();
+        }
+
+        private void perfilesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmPerfiles frmPerfiles = new frmPerfiles();
+            frmPerfiles.Height = 255;
+            frmPerfiles.MdiParent = this;
+            frmPerfiles.Show();
         }
     }
 }

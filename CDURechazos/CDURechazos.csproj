@@ -104,6 +104,12 @@
     <Compile Include="Catalogos\frmFallas.Designer.cs">
       <DependentUpon>frmFallas.cs</DependentUpon>
     </Compile>
+    <Compile Include="Catalogos\frmPerfiles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Catalogos\frmPerfiles.Designer.cs">
+      <DependentUpon>frmPerfiles.cs</DependentUpon>
+    </Compile>
     <Compile Include="Catalogos\frmSubFallas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -123,11 +129,35 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmChangePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmChangePassword.Designer.cs">
+      <DependentUpon>frmChangePassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmConfiguracion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmConfiguracion.Designer.cs">
+      <DependentUpon>frmConfiguracion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEditarRegistro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEditarRegistro.Designer.cs">
+      <DependentUpon>frmEditarRegistro.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRegistros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRegistros.Designer.cs">
+      <DependentUpon>frmRegistros.cs</DependentUpon>
     </Compile>
     <Compile Include="Modulos\basConfiguracion.cs" />
     <Compile Include="Modulos\basFunctions.cs" />
@@ -135,6 +165,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Catalogos\frmFallas.resx">
       <DependentUpon>frmFallas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Catalogos\frmPerfiles.resx">
+      <DependentUpon>frmPerfiles.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Catalogos\frmSubFallas.resx">
       <DependentUpon>frmSubFallas.cs</DependentUpon>
@@ -145,8 +178,17 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmChangePassword.resx">
+      <DependentUpon>frmChangePassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmConfiguracion.resx">
+      <DependentUpon>frmConfiguracion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRegistros.resx">
+      <DependentUpon>frmRegistros.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

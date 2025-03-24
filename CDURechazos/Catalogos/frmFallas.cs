@@ -46,6 +46,7 @@ namespace CDURechazos.Catalogos
             txNombre.Text = "";
             chEstatus.Checked = true;
             btAceptar.Enabled = false;
+            gbFallas.Text = "Nueva Falla";
         }
 
         private void dgvFallas_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -60,6 +61,7 @@ namespace CDURechazos.Catalogos
                 this.Height = 422;
                 intEditar = 1;
                 gbFallas.Visible = true;
+                gbFallas.Text = "Editar Falla";
 
                 DataGridViewRow filaSeleccionada = dgvFallas.Rows[e.RowIndex];
 

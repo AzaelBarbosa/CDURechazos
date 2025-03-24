@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using CDURechazos.Clases;
 using CDURechazos.Modulos;
+using System.IO;
 
 namespace CDURechazos
 {
@@ -28,10 +29,23 @@ namespace CDURechazos
 
         private void frmLogin_Load(object sender, EventArgs e)
         {
-           
 
-            basFunctions basFunc = new basFunctions();
+            string filePath = @"C:\CDU\Configuracion.txt";
+            if (!File.Exists(filePath))
+            {
+                MessageBox.Show("El archivo de configuración no existe.\nSe procederá a abrir el asistente para crear y configurar la conexión.",
+               "Copeland",
+               MessageBoxButtons.OK,
+               MessageBoxIcon.Information
+                );
+                frmConfiguracion formCrear = new frmConfiguracion();
+                formCrear.ShowDialog();
+            }
+
+                basFunctions basFunc = new basFunctions();
             basFunc.ConectaBD();
+
+
 
             if (basConfiguracion.ModoConexion == 1)
             {
@@ -69,13 +83,23 @@ namespace CDURechazos
             }
             else
             {
-                btEntrar.Enabled = true;
+                if (Convert.ToInt32(drPaso[0]["ChangePass"]) == 1)
+                {
+                    MessageBox.Show("El Usuario ah solocitado resetar su contraseña", "Copeland", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    frmChangePassword frmCP = new frmChangePassword(Convert.ToInt32(drPaso[0]["IdUsuario"]));
+                    frmCP.ShowDialog();
+                }
+                else
+                {
+                    btEntrar.Enabled = true;
+                }
             }
         }
 
         private void btEntrar_Click(object sender, EventArgs e)
         {
-            if (drPaso[0]["Contrasena"].ToString() == txPassword.Text)
+            string strPassword = basFunctions.HashPassword(txPassword.Text);
+            if (drPaso[0]["Contrasena"].ToString() == strPassword)
             {
                 frmMain frmM = new frmMain(drPaso[0]);
                 basConfiguracion.TipoPermiso = Convert.ToInt32(drPaso[0]["TipoPermiso"]);

@@ -8,11 +8,14 @@ using System.Windows.Forms;
 using CDURechazos.Clases;
 using System.IO;
 using System.Data.SqlClient;
+using System.Security.Cryptography;
 
 namespace CDURechazos.Modulos
 {
     public class basFunctions
     {
+        private static readonly string clave = "TuClaveSecreta123"; // debe ser de 16, 24 o 32 caracteres
+        private static readonly string iv = "VectorInicial1234";    // debe ser de 16 caracteres
         public void ConectaBD()
         {
             string sSQL = "";
@@ -20,7 +23,7 @@ namespace CDURechazos.Modulos
 
             try
             {
-                string filePath = @"C:\CheckList\CheckList.txt";
+                string filePath = @"C:\CDU\Configuracion.txt";
 
                 // Leer todas las líneas del archivo
                 string[] lines = File.ReadAllLines(filePath);
@@ -31,11 +34,7 @@ namespace CDURechazos.Modulos
                 string dbLocalUser = "";
                 string dbLocalPassword = "";
 
-                string dbRemoteHost = "";
-                string dbRemoteName = "";
-                string dbRemoteUser = "";
-                string dbRemotePassword = "";
-                string dbPort = "";
+                string dbUrl = "";
 
                 // Procesar las líneas
                 for (int i = 0; i < lines.Length; i++)
@@ -50,11 +49,10 @@ namespace CDURechazos.Modulos
                             break;
 
                         case "--BASE DE DATOS POSTGRES--":
-                            dbRemoteHost = lines[i + 1];
-                            dbRemoteName = lines[i + 2];
-                            dbRemoteUser = lines[i + 3];
-                            dbRemotePassword = lines[i + 4];
-                            dbPort = lines[i + 5];
+                            dbUrl = lines[i + 1];
+                            break;
+                        case "--OTROS--":
+                            basConfiguracion.ModoConexion = Convert.ToInt32( lines[i + 1]);
                             break;
                     }
                 }
@@ -78,7 +76,7 @@ namespace CDURechazos.Modulos
                 else
                 {
                     // Se establecen los parámetros de conexión a PostgreSQL
-                    PgSQLHelper.Init(300, dbRemoteHost, dbRemoteName, dbRemoteUser, dbRemotePassword, dbPort);
+                    PgSQLHelper.Init(300, dbUrl);
 
                     dtPaso = PgSQLHelper.ExecSQLReturnDT(@"SELECT * FROM public.""Tablas"" LIMIT 300 OFFSET 0;", "Tablas");
                     if (dtPaso != null && dtPaso.Rows.Count > 0)
@@ -93,5 +91,16 @@ namespace CDURechazos.Modulos
                 Environment.Exit(0); // equivalente a End
             }
         }
+
+        public static string HashPassword(string password)
+        {
+            using (SHA256 sha256 = SHA256.Create())
+            {
+                byte[] entrada = Encoding.UTF8.GetBytes(password);
+                byte[] hash = sha256.ComputeHash(entrada);
+                return Convert.ToBase64String(hash);
+            }
+        }
+
     }
 }

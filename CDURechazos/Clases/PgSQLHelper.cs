@@ -33,18 +33,10 @@ namespace CDURechazos.Clases
             mstrModuleName = this.GetType().ToString();
         }
 
-        public static void Init(int intTimeOut = 300, string strCatalog = "", string strDataSrc = "", string strUserID = "", string strPW = "", string strPort = "")
+        public static void Init(int intTimeOut = 300, string strUrl = "")
         {
-            if (string.IsNullOrEmpty(strCatalog))
-                strCatalog = "bd_valessa02";
-            if (string.IsNullOrEmpty(strDataSrc))
-                strDataSrc = "localhost";
-            if (string.IsNullOrEmpty(strUserID))
-                strUserID = "postgres";
-            if (string.IsNullOrEmpty(strPW))
-                strPW = "12345678";
 
-            mstrConnection = "Server=mainline.proxy.rlwy.net;Port=47685;Database=railway;Username=postgres;Password=pytppnPvBlNBBRazBMNXtlDNUtoZAvhj;sslmode=require;";
+            mstrConnection = strUrl;
 
             mintTimeOut = intTimeOut;
 
