@@ -39,12 +39,12 @@ namespace CDURechazos
                 DataTable dtRegistro;
                 if (basConfiguracion.ModoConexion == 1)
                 {
-                    //dtRegistro = sqlServer.ExecSQLReturnDT("SELECT * FROM RegistroFallas WHERE id = " + idRegistro, "RegistroFallas");
-                    //txSerie.Text = dtRegistro.Rows[0]["Serie"].ToString();
-                    //txCodigo.Text = dtRegistro.Rows[0]["Codigo"].ToString();
-                    //txNombre.Text = dtRegistro.Rows[0]["Nombre"].ToString();
-                    //cboFalla.SelectedValue = dtRegistro.Rows[0]["idFalla"];
-                    //cboSubfalla.SelectedValue = dtRegistro.Rows[0]["idSubFalla"];
+                    dtRegistro = sqlServer.ExecSQLReturnDT("SELECT * FROM RegistroFallas WHERE id = " + idRegistro, "RegistroFallas");
+                    txSerie.Text = dtRegistro.Rows[0]["Serie"].ToString();
+                    txCodigo.Text = dtRegistro.Rows[0]["Codigo"].ToString();
+                    txNombre.Text = dtRegistro.Rows[0]["Nombre"].ToString();
+                    cboFalla.SelectedValue = dtRegistro.Rows[0]["idFalla"];
+                    cboSubfalla.SelectedValue = dtRegistro.Rows[0]["idSubFalla"];
                 }
                 else
                 {
@@ -63,8 +63,8 @@ namespace CDURechazos
             DataTable dtFalla;
             if (basConfiguracion.ModoConexion == 1)
             {
-                //dtFalla = sqlServer.ExecSQLReturnDT("SELECT * FROM Fallas", "Fallas");
-                //cboFalla.DataSource = dtFalla;
+                dtFalla = sqlServer.ExecSQLReturnDT("SELECT * FROM Fallas", "Fallas");
+                cboFalla.DataSource = dtFalla;
                 cboFalla.DisplayMember = "Descripcion";
                 cboFalla.ValueMember = "IdFalla";
             }
@@ -82,8 +82,8 @@ namespace CDURechazos
             DataTable dtSubFalla;
             if (basConfiguracion.ModoConexion == 1)
             {
-                //dtSubFalla = sqlServer.ExecSQLReturnDT("SELECT * FROM SubFallas WHERE idFalla = " + cboFalla.SelectedValue, "SubFallas");
-                //cboPerfil.DataSource = dtSubFalla;
+                dtSubFalla = sqlServer.ExecSQLReturnDT("SELECT * FROM SubFallas WHERE idFalla = " + (cboFalla.ValueMember == "" ? 0 : cboFalla.SelectedValue), "SubFallas");
+                cboSubfalla.DataSource = dtSubFalla;
                 cboSubfalla.DisplayMember = "Descripcion";
                 cboSubfalla.ValueMember = "IdSubFalla";
             }
@@ -110,12 +110,12 @@ namespace CDURechazos
                 if (intEditar == 0)
                 {
                     sSQL = "INSERT INTO RegistroFallas (Serie, Codigo, Nombre, idFalla, idSubFalla) VALUES('" + txSerie.Text + "','" + txCodigo.Text + "'" + txNombre.Text + "," + cboFalla.SelectedValue + "," + cboSubfalla.SelectedValue + ")";
-                    //sqlServer.ExecSQL(sSQL);
+                    sqlServer.ExecSQL(sSQL);
                 }
                 else
                 {
                     sSQL = "UPDATE RegistroFallas SET Serie = '" + txSerie.Text + "', Codigo = '" + txCodigo.Text + "', Nombre = '" + txNombre.Text + "', idFalla = " + cboFalla.SelectedValue + ", idSubFalla = " + cboSubfalla.SelectedValue + " WHERE id = " + idRegistro;
-                    //sqlServer.ExecSQL(sSQL);
+                    sqlServer.ExecSQL(sSQL);
                 }
             }
             else

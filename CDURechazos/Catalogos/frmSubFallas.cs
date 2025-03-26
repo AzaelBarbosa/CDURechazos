@@ -30,7 +30,7 @@ namespace CDURechazos.Catalogos
 
             if (basConfiguracion.ModoConexion == 1)
             {
-                //dtSubFallas = sqlServer.ExecSQLReturnDT("SELECT * FROM Fallas", "Fallas");
+                dtSubFallas = sqlServer.ExecSQLReturnDT("SELECT * FROM SubFallas", "SubFallas");
                 dgvFallas.DataSource = dtSubFallas;
                 dgvFallas.Refresh();
             }
@@ -98,9 +98,9 @@ namespace CDURechazos.Catalogos
             {
                 if (intEditar == 0)
                 {
-                    sSQL = "INSERT INTO SubFallas (Descripcion, Estatus, idFalla) VALUES('" + txNombre.Text + "'," + (chEstatus.Checked ? 1 : 0) + "," + cboFallas.SelectedValue + ")";
-                    //sqlServer.ExecSQL(sSQL);
-                    //dtSubFallas = sqlServer.ExecSQLReturnDT("SELECT * FROM Fallas", "Fallas");
+                    sSQL = "INSERT INTO SubFallas (Descripcion, Estatus, idFalla) VALUES('" + txNombre.Text + "'," + (chEstatus.Checked ? 1 : 0) + ", " + cboFallas.SelectedValue + ")";
+                    sqlServer.ExecSQL(sSQL);
+                    dtSubFallas = sqlServer.ExecSQLReturnDT("SELECT * FROM Fallas", "Fallas");
                     dgvFallas.DataSource = dtSubFallas;
                     dgvFallas.Refresh();
                     this.Height = 300;
@@ -108,8 +108,8 @@ namespace CDURechazos.Catalogos
                 else
                 {
                     sSQL = "UPDATE SubFallas SET Descripcion = '" + txNombre.Text + "', Estatus = " + (chEstatus.Checked ? 1 : 0) + ", idFalla = " + cboFallas.SelectedValue + " WHERE IdSubFalla = " + IdSubFalla;
-                    //sqlServer.ExecSQL(sSQL);
-                    //dtSubFallas = sqlServer.ExecSQLReturnDT("SELECT * FROM Fallas", "Fallas");
+                    sqlServer.ExecSQL(sSQL);
+                    dtSubFallas = sqlServer.ExecSQLReturnDT("SELECT * FROM Fallas", "Fallas");
                     dgvFallas.DataSource = dtSubFallas;
                     dgvFallas.Refresh();
                     this.Height = 300;

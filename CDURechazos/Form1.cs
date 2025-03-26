@@ -49,11 +49,11 @@ namespace CDURechazos
 
             if (basConfiguracion.ModoConexion == 1)
             {
-          //      dtPaso = sqlServer.ExecSQLReturnDS(
-          //          @"SELECT U.*, P.TipoPermiso 
-          //FROM Usuarios U 
-          //INNER JOIN Perfiles P ON P.IdPerfil = U.IdPerfil",
-          //          "Usuarios");
+                dtPaso = sqlServer.ExecSQLReturnDS(
+                    @"SELECT U.*, P.TipoPermiso 
+          FROM Usuarios U 
+          INNER JOIN Perfiles P ON P.IdPerfil = U.IdPerfil",
+                    "Usuarios");
             }
             else
             {

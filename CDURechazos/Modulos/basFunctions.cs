@@ -62,10 +62,10 @@ namespace CDURechazos.Modulos
                 if (basConfiguracion.ModoConexion == 1)
                 {
                     // Se establecen los parámetros de conexión a SQL Server
-                    //sqlServer.Init(null, dbLocalName, dbLocalHost, dbLocalUser, dbLocalPassword);
+                    sqlServer.Init(300, dbLocalName, dbLocalHost, dbLocalUser, dbLocalPassword);
 
                     // Ejecutar consulta de prueba
-                    //sqlServer.ExecSQL("USE Salvage");
+                    sqlServer.ExecSQL("USE Salvage");
 
                     // Obtener número de sucursal
                     sSQL = "SELECT TOP 1 * FROM Usuarios";

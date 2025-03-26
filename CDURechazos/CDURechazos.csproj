@@ -145,6 +145,7 @@
       <DependentUpon>frmUsuarios.cs</DependentUpon>
     </Compile>
     <Compile Include="Clases\PgSQLHelper.cs" />
+    <Compile Include="Clases\sqlServer.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>

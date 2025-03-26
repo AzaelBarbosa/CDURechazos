@@ -58,7 +58,9 @@ namespace CDURechazos
             }
             if (basConfiguracion.ModoConexion == 1)
             {
-                //dtRegistros = sqlServer.ExecSQLReturnDT("SELECT * FROM Fallas", "Fallas");
+                dtRegistros = sqlServer.ExecSQLReturnDT("SELECT RF.id, RF.Codigo, RF.Serie, RF.Nombre, F.Codigo AS Codigo Falla, F.Descripcion AS Falla, SF.Descripcion AS Sub Falla, RF.FechaAlta AS Fecha Alta  FROM public.RegistroFallas RF" +
+                    " INNER JOIN Fallas F ON F.idFalla = RF.idFalla " +
+                    " INNER JOIN SubFallas SF ON SF.idSubFalla = RF.idSubFalla", "Registros");
                 dgvRegistros.DataSource = dtRegistros;
                 dgvRegistros.Refresh();
             }
@@ -77,7 +79,7 @@ namespace CDURechazos
         {
             if (basConfiguracion.ModoConexion == 1)
             {
-                //dtRegistros = sqlServer.ExecSQLReturnDT("SELECT * FROM Fallas", "Fallas");
+                dtRegistros = sqlServer.ExecSQLReturnDT("SELECT RF.id, RF.Codigo, RF.Serie, RF.Nombre, F.Codigo AS Codigo Falla, F.Descripcion AS Falla, SF.Descripcion AS Sub Falla, RF.FechaAlta AS Fecha Alta  FROM public.RegistroFallas RF INNER JOIN Fallas F ON F.idFalla = RF.idFalla INNER JOIN SubFallas SF ON SF.idSubFalla = RF.idSubFalla", "Fallas");
                 dgvRegistros.DataSource = dtRegistros;
                 dgvRegistros.Refresh();
                 basFunctions.dtExportar = dtRegistros;
@@ -100,7 +102,7 @@ namespace CDURechazos
             frmEditarRegistro.ShowDialog();
             if (basConfiguracion.ModoConexion == 1)
             {
-                //dtRegistros = sqlServer.ExecSQLReturnDT("SELECT * FROM Fallas", "Fallas");
+                dtRegistros = sqlServer.ExecSQLReturnDT("SELECT RF.id, RF.Codigo, RF.Serie, RF.Nombre, F.Codigo AS Codigo Falla, F.Descripcion AS Falla, SF.Descripcion AS Sub Falla, RF.FechaAlta AS Fecha Alta  FROM public.RegistroFallas RF INNER JOIN Fallas F ON F.idFalla = RF.idFalla INNER JOIN SubFallas SF ON SF.idSubFalla = RF.idSubFalla", "Fallas");
                 dgvRegistros.DataSource = dtRegistros;
                 dgvRegistros.Refresh();
                 basFunctions.dtExportar = dtRegistros;

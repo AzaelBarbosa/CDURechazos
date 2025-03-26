@@ -49,7 +49,7 @@ namespace CDURechazos
                 {
                     string strPassword = basFunctions.HashPassword(txContrasena.Text);
                     string sSQL = "UPDATE Usuarios SET Contrasena = '" + strPassword + "', ChangePass = 0 WHERE IdUsuario = " + idUsuarioGlobal;
-                    //sqlServer.ExecSQL(sSQL);
+                    sqlServer.ExecSQL(sSQL);
                 }
                 else
                 {

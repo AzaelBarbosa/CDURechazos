@@ -27,7 +27,7 @@ namespace CDURechazos.Catalogos
             CargarComboPerfiles();
             if (basConfiguracion.ModoConexion == 1)
             {
-                //dtUsuarios = sqlServer.ExecSQLReturnDT("SELECT * FROM Usuarios", "Usuarios");
+                dtUsuarios = sqlServer.ExecSQLReturnDT("SELECT U.IdUsuario,U.Usuario,U.Correo,U.NombreUsuario AS [Nombre Usuario], U.Estatus, P.Descripcion AS Perfil FROM dbo.Usuarios U INNER JOIN dbo.Perfiles P ON P.IdPerfil = U.IdPerfil WHERE U.Estatus = 1", "Usuarios");
                 dgvUsuarios.DataSource = dtUsuarios;
                 dgvUsuarios.Refresh();
             }
@@ -69,8 +69,8 @@ namespace CDURechazos.Catalogos
             DataTable dtPerfiles;
             if (basConfiguracion.ModoConexion == 1)
             {
-                //dtPerfiles = sqlServer.ExecSQLReturnDT("SELECT * FROM Perfiles", "Perfiles");
-                //cboPerfil.DataSource = dtPerfiles;
+                dtPerfiles = sqlServer.ExecSQLReturnDT("SELECT * FROM Perfiles", "Perfiles");
+                cboPerfil.DataSource = dtPerfiles;
                 cboPerfil.DisplayMember = "Descripcion";
                 cboPerfil.ValueMember = "IdPerfil";
             }
@@ -130,8 +130,8 @@ namespace CDURechazos.Catalogos
                 if (intEditar == 0)
                 {
                     sSQL = "INSERT INTO Usuarios (NombreUsuario, Estatus, Usuario, IdPerfil) VALUES('" + txNombre.Text + "'," + (chEstatus.Checked ? 1 : 0) + ", '" + txUsuario.Text + "'," + cboPerfil.SelectedValue + ")";
-                    //sqlServer.ExecSQL(sSQL);
-                    //dtUsuarios = sqlServer.ExecSQLReturnDT("SELECT * FROM Fallas", "Fallas");
+                    sqlServer.ExecSQL(sSQL);
+                    dtUsuarios = sqlServer.ExecSQLReturnDT("SELECT U.IdUsuario,U.Usuario,U.Correo,U.NombreUsuario AS [Nombre Usuario], U.Estatus, P.Descripcion AS Perfil FROM dbo.Usuarios U INNER JOIN dbo.Perfiles P ON P.IdPerfil = U.IdPerfil WHERE U.Estatus = 1", "Fallas");
                     dgvUsuarios.DataSource = dtUsuarios;
                     dgvUsuarios.Refresh();
                     this.Height = 322;
@@ -139,8 +139,8 @@ namespace CDURechazos.Catalogos
                 else
                 {
                     sSQL = "UPDATE Usuarios SET NombreUsuario = '" + txNombre.Text + "', Estatus = " + (chEstatus.Checked ? 1 : 0) + ", Usuario = '" + txUsuario.Text + "', IdPerfil = " + cboPerfil.SelectedValue + ", ChangePass = " + (chResetear.Checked ? 1 : 0) + " WHERE IdUsuario = " + idUsuario;
-                    //sqlServer.ExecSQL(sSQL);
-                    //dtUsuarios = sqlServer.ExecSQLReturnDT("SELECT * FROM Fallas", "Fallas");
+                    sqlServer.ExecSQL(sSQL);
+                    dtUsuarios = sqlServer.ExecSQLReturnDT("SELECT U.IdUsuario,U.Usuario,U.Correo,U.NombreUsuario AS [Nombre Usuario], U.Estatus, P.Descripcion AS Perfil FROM dbo.Usuarios U INNER JOIN dbo.Perfiles P ON P.IdPerfil = U.IdPerfil WHERE U.Estatus = 1", "Fallas");
                     dgvUsuarios.DataSource = dtUsuarios;
                     dgvUsuarios.Refresh();
                     this.Height = 322;

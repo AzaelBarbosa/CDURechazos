@@ -27,7 +27,7 @@ namespace CDURechazos.Catalogos
         {
             if (basConfiguracion.ModoConexion == 1)
             {
-                //dtPerfiles = sqlServer.ExecSQLReturnDT("SELECT * FROM Fallas", "Fallas");
+                dtPerfiles = sqlServer.ExecSQLReturnDT("SELECT * FROM Perfiles", "Perfiles");
                 dgvPerfil.DataSource = dtPerfiles;
                 dgvPerfil.Refresh();
             }
@@ -74,8 +74,8 @@ namespace CDURechazos.Catalogos
                 if (intEditar == 0)
                 {
                     sSQL = "INSERT INTO Perfiles (Descripcion, Estatus) VALUES('" + txCodigo.Text + "'," + (chEstatus.Checked ? 1 : 0) + ")";
-                    //sqlServer.ExecSQL(sSQL);
-                    //dtPerfiles = sqlServer.ExecSQLReturnDT("SELECT * FROM Perfiles", "Perfiles");
+                    sqlServer.ExecSQL(sSQL);
+                    dtPerfiles = sqlServer.ExecSQLReturnDT("SELECT * FROM Perfiles", "Perfiles");
                     dgvPerfil.DataSource = dtPerfiles;
                     dgvPerfil.Refresh();
                     this.Height = 255;
@@ -83,8 +83,8 @@ namespace CDURechazos.Catalogos
                 else
                 {
                     sSQL = "UPDATE Perfiles SET Descripcion = '" + txCodigo.Text + "', Estatus = " + (chEstatus.Checked ? 1 : 0) + " WHERE IdPerfil = " + IdPerfil;
-                    //sqlServer.ExecSQL(sSQL);
-                    //dtPerfiles = sqlServer.ExecSQLReturnDT("SELECT * FROM Perfiles", "Perfiles");
+                    sqlServer.ExecSQL(sSQL);
+                    dtPerfiles = sqlServer.ExecSQLReturnDT("SELECT * FROM Perfiles", "Perfiles");
                     dgvPerfil.DataSource = dtPerfiles;
                     dgvPerfil.Refresh();
                     this.Height = 255;

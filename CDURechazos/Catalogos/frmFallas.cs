@@ -26,7 +26,7 @@ namespace CDURechazos.Catalogos
         {
             if (basConfiguracion.ModoConexion == 1)
             {
-                //dtFallas = sqlServer.ExecSQLReturnDT("SELECT * FROM Fallas", "Fallas");
+                dtFallas = sqlServer.ExecSQLReturnDT("SELECT * FROM Fallas", "Fallas");
                 dgvFallas.DataSource = dtFallas;
                 dgvFallas.Refresh();
             }
@@ -80,18 +80,18 @@ namespace CDURechazos.Catalogos
             {
                 if (intEditar == 0)
                 {
-                    sSQL = "INSERT INTO Fallas (Descripcion, Estatus) VALUES('" + txNombre.Text + "'," + (chEstatus.Checked ? 1 : 0) + ")";
-                    //sqlServer.ExecSQL(sSQL);
-                    //dtFallas = sqlServer.ExecSQLReturnDT("SELECT * FROM Fallas", "Fallas");
+                    sSQL = "INSERT INTO Fallas (Descripcion, Estatus, Codigo) VALUES('" + txNombre.Text + "'," + (chEstatus.Checked ? 1 : 0) + ", '" + txCodigo.Text + "')";
+                    sqlServer.ExecSQL(sSQL);
+                    dtFallas = sqlServer.ExecSQLReturnDT("SELECT * FROM Fallas", "Fallas");
                     dgvFallas.DataSource = dtFallas;
                     dgvFallas.Refresh();
                     this.Height = 255;
                 }
                 else
                 {
-                    sSQL = "UPDATE Estaciones SET Descripcion = '" + txNombre.Text + "', Estatus = " + (chEstatus.Checked ? 1 : 0) + " WHERE EstacionID = " + IdFalla;
-                    //sqlServer.ExecSQL(sSQL);
-                    //dtFallas = sqlServer.ExecSQLReturnDT("SELECT * FROM Fallas", "Fallas");
+                    sSQL = "UPDATE Fallas SET Descripcion = '" + txNombre.Text + "', Estatus = " + (chEstatus.Checked ? 1 : 0) + ", Codigo = '" + txCodigo.Text + "'  WHERE idFalla = " + IdFalla;
+                    sqlServer.ExecSQL(sSQL);
+                    dtFallas = sqlServer.ExecSQLReturnDT("SELECT * FROM Fallas", "Fallas");
                     dgvFallas.DataSource = dtFallas;
                     dgvFallas.Refresh();
                     this.Height = 255;
