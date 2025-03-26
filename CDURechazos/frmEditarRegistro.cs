@@ -29,6 +29,33 @@ namespace CDURechazos
         private void frmEditarRegistro_Load(object sender, EventArgs e)
         {
             CargarComboFalla();
+            if (idRegistro == 0)
+            {
+                intEditar = 0;
+            }
+            else
+            {
+                intEditar = 1;
+                DataTable dtRegistro;
+                if (basConfiguracion.ModoConexion == 1)
+                {
+                    //dtRegistro = sqlServer.ExecSQLReturnDT("SELECT * FROM RegistroFallas WHERE id = " + idRegistro, "RegistroFallas");
+                    //txSerie.Text = dtRegistro.Rows[0]["Serie"].ToString();
+                    //txCodigo.Text = dtRegistro.Rows[0]["Codigo"].ToString();
+                    //txNombre.Text = dtRegistro.Rows[0]["Nombre"].ToString();
+                    //cboFalla.SelectedValue = dtRegistro.Rows[0]["idFalla"];
+                    //cboSubfalla.SelectedValue = dtRegistro.Rows[0]["idSubFalla"];
+                }
+                else
+                {
+                    dtRegistro = PgSQLHelper.ExecSQLReturnDT(@"SELECT * FROM public.""RegistroFallas"" WHERE ""id"" = " + idRegistro, "RegistroFallas");
+                    txSerie.Text = dtRegistro.Rows[0]["Serie"].ToString();
+                    txCodigo.Text = dtRegistro.Rows[0]["Codigo"].ToString();
+                    txNombre.Text = dtRegistro.Rows[0]["Nombre"].ToString();
+                    cboFalla.SelectedValue = dtRegistro.Rows[0]["idFalla"];
+                    cboSubfalla.SelectedValue = dtRegistro.Rows[0]["idSubFalla"];
+                }
+            }
         }
 
         private void CargarComboFalla()

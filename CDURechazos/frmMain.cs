@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CDURechazos.Catalogos;
+using CDURechazos.Modulos;
 
 namespace CDURechazos
 {
@@ -85,5 +86,32 @@ namespace CDURechazos
             frmRegistros.MdiParent = this;
             frmRegistros.Show();
         }
-    }
+
+        private void exportarExcelToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (basFunctions.dtExportar == null) return;
+
+            SaveFileDialog saveFile = new SaveFileDialog
+            {
+                Filter = "Archivo Excel (*.xlsx)|*.xlsx",
+                FileName = "Exportacion.xlsx"
+            };
+
+            if (saveFile.ShowDialog() == DialogResult.OK)
+            {
+                basFunctions basFunctions = new basFunctions();
+                basFunctions.ExportarDataTableAExcel(basFunctions.dtExportar, saveFile.FileName);
+                MessageBox.Show("Archivo exportado correctamente.", "Excel", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                // Abrir el Explorador de Archivos con el archivo seleccionado
+                var psi = new System.Diagnostics.ProcessStartInfo
+                {
+                    FileName = "explorer.exe",
+                    Arguments = $"/select,\"{saveFile.FileName}\""
+                };
+
+                System.Diagnostics.Process.Start(psi);
+            }
+        }
+     }
 }

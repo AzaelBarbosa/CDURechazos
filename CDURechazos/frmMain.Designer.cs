@@ -36,6 +36,7 @@
             this.subfallaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.perfilesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exportarExcelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aplicacionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.configuracionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cerrarSesionToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -43,13 +44,13 @@
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.tlUsuario = new System.Windows.Forms.ToolStripStatusLabel();
-            this.exportarExcelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
             // 
+            this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.registroToolStripMenuItem,
@@ -59,15 +60,15 @@
             this.salirToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(3, 1, 0, 1);
-            this.menuStrip1.Size = new System.Drawing.Size(722, 24);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(6, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(1444, 42);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // registroToolStripMenuItem
             // 
             this.registroToolStripMenuItem.Name = "registroToolStripMenuItem";
-            this.registroToolStripMenuItem.Size = new System.Drawing.Size(62, 22);
+            this.registroToolStripMenuItem.Size = new System.Drawing.Size(120, 38);
             this.registroToolStripMenuItem.Text = "Registro";
             this.registroToolStripMenuItem.Click += new System.EventHandler(this.registroToolStripMenuItem_Click);
             // 
@@ -79,34 +80,34 @@
             this.subfallaToolStripMenuItem,
             this.perfilesToolStripMenuItem});
             this.catalogosToolStripMenuItem.Name = "catalogosToolStripMenuItem";
-            this.catalogosToolStripMenuItem.Size = new System.Drawing.Size(72, 22);
+            this.catalogosToolStripMenuItem.Size = new System.Drawing.Size(139, 38);
             this.catalogosToolStripMenuItem.Text = "Catalogos";
             // 
             // usuariosToolStripMenuItem
             // 
             this.usuariosToolStripMenuItem.Name = "usuariosToolStripMenuItem";
-            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(119, 22);
+            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(237, 44);
             this.usuariosToolStripMenuItem.Text = "Usuarios";
             this.usuariosToolStripMenuItem.Click += new System.EventHandler(this.usuariosToolStripMenuItem_Click);
             // 
             // fallasToolStripMenuItem
             // 
             this.fallasToolStripMenuItem.Name = "fallasToolStripMenuItem";
-            this.fallasToolStripMenuItem.Size = new System.Drawing.Size(119, 22);
+            this.fallasToolStripMenuItem.Size = new System.Drawing.Size(237, 44);
             this.fallasToolStripMenuItem.Text = "Fallas";
             this.fallasToolStripMenuItem.Click += new System.EventHandler(this.fallasToolStripMenuItem_Click);
             // 
             // subfallaToolStripMenuItem
             // 
             this.subfallaToolStripMenuItem.Name = "subfallaToolStripMenuItem";
-            this.subfallaToolStripMenuItem.Size = new System.Drawing.Size(119, 22);
+            this.subfallaToolStripMenuItem.Size = new System.Drawing.Size(237, 44);
             this.subfallaToolStripMenuItem.Text = "Subfalla";
             this.subfallaToolStripMenuItem.Click += new System.EventHandler(this.subfallaToolStripMenuItem_Click);
             // 
             // perfilesToolStripMenuItem
             // 
             this.perfilesToolStripMenuItem.Name = "perfilesToolStripMenuItem";
-            this.perfilesToolStripMenuItem.Size = new System.Drawing.Size(119, 22);
+            this.perfilesToolStripMenuItem.Size = new System.Drawing.Size(237, 44);
             this.perfilesToolStripMenuItem.Text = "Perfiles";
             this.perfilesToolStripMenuItem.Click += new System.EventHandler(this.perfilesToolStripMenuItem_Click);
             // 
@@ -115,8 +116,15 @@
             this.reportesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.exportarExcelToolStripMenuItem});
             this.reportesToolStripMenuItem.Name = "reportesToolStripMenuItem";
-            this.reportesToolStripMenuItem.Size = new System.Drawing.Size(65, 22);
+            this.reportesToolStripMenuItem.Size = new System.Drawing.Size(127, 38);
             this.reportesToolStripMenuItem.Text = "Reportes";
+            // 
+            // exportarExcelToolStripMenuItem
+            // 
+            this.exportarExcelToolStripMenuItem.Name = "exportarExcelToolStripMenuItem";
+            this.exportarExcelToolStripMenuItem.Size = new System.Drawing.Size(359, 44);
+            this.exportarExcelToolStripMenuItem.Text = "Exportar Excel";
+            this.exportarExcelToolStripMenuItem.Click += new System.EventHandler(this.exportarExcelToolStripMenuItem_Click);
             // 
             // aplicacionToolStripMenuItem
             // 
@@ -124,27 +132,27 @@
             this.configuracionToolStripMenuItem,
             this.cerrarSesionToolStripMenuItem1});
             this.aplicacionToolStripMenuItem.Name = "aplicacionToolStripMenuItem";
-            this.aplicacionToolStripMenuItem.Size = new System.Drawing.Size(75, 22);
+            this.aplicacionToolStripMenuItem.Size = new System.Drawing.Size(143, 38);
             this.aplicacionToolStripMenuItem.Text = "Aplicacion";
             // 
             // configuracionToolStripMenuItem
             // 
             this.configuracionToolStripMenuItem.Name = "configuracionToolStripMenuItem";
-            this.configuracionToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
+            this.configuracionToolStripMenuItem.Size = new System.Drawing.Size(297, 44);
             this.configuracionToolStripMenuItem.Text = "Configuracion";
             this.configuracionToolStripMenuItem.Click += new System.EventHandler(this.configuracionToolStripMenuItem_Click);
             // 
             // cerrarSesionToolStripMenuItem1
             // 
             this.cerrarSesionToolStripMenuItem1.Name = "cerrarSesionToolStripMenuItem1";
-            this.cerrarSesionToolStripMenuItem1.Size = new System.Drawing.Size(150, 22);
+            this.cerrarSesionToolStripMenuItem1.Size = new System.Drawing.Size(297, 44);
             this.cerrarSesionToolStripMenuItem1.Text = "Cerrar Sesion";
             this.cerrarSesionToolStripMenuItem1.Click += new System.EventHandler(this.cerrarSesionToolStripMenuItem1_Click);
             // 
             // salirToolStripMenuItem
             // 
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(41, 22);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(79, 38);
             this.salirToolStripMenuItem.Text = "Salir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
@@ -154,9 +162,10 @@
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1,
             this.tlUsuario});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 403);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 775);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(722, 22);
+            this.statusStrip1.Padding = new System.Windows.Forms.Padding(2, 0, 28, 0);
+            this.statusStrip1.Size = new System.Drawing.Size(1444, 42);
             this.statusStrip1.TabIndex = 2;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -164,30 +173,25 @@
             // 
             this.toolStripStatusLabel1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(52, 17);
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(109, 32);
             this.toolStripStatusLabel1.Text = "Usuario:";
             // 
             // tlUsuario
             // 
             this.tlUsuario.Name = "tlUsuario";
-            this.tlUsuario.Size = new System.Drawing.Size(57, 17);
+            this.tlUsuario.Size = new System.Drawing.Size(114, 32);
             this.tlUsuario.Text = "lbUsuario";
-            // 
-            // exportarExcelToolStripMenuItem
-            // 
-            this.exportarExcelToolStripMenuItem.Name = "exportarExcelToolStripMenuItem";
-            this.exportarExcelToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.exportarExcelToolStripMenuItem.Text = "Exportar Excel";
             // 
             // frmMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(722, 425);
+            this.ClientSize = new System.Drawing.Size(1444, 817);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
+            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.MaximizeBox = false;
             this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

@@ -9,6 +9,7 @@ using CDURechazos.Clases;
 using System.IO;
 using System.Data.SqlClient;
 using System.Security.Cryptography;
+using ClosedXML.Excel;
 
 namespace CDURechazos.Modulos
 {
@@ -16,6 +17,7 @@ namespace CDURechazos.Modulos
     {
         private static readonly string clave = "TuClaveSecreta123"; // debe ser de 16, 24 o 32 caracteres
         private static readonly string iv = "VectorInicial1234";    // debe ser de 16 caracteres
+        public static DataTable dtExportar;
         public void ConectaBD()
         {
             string sSQL = "";
@@ -99,6 +101,40 @@ namespace CDURechazos.Modulos
                 byte[] entrada = Encoding.UTF8.GetBytes(password);
                 byte[] hash = sha256.ComputeHash(entrada);
                 return Convert.ToBase64String(hash);
+            }
+        }
+
+        public void ExportarDataGridViewAExcel(DataGridView dgv, string rutaArchivo)
+        {
+            using (var wb = new XLWorkbook())
+            {
+                var ws = wb.Worksheets.Add("Datos");
+
+                // Escribir encabezados
+                for (int i = 0; i < dgv.Columns.Count; i++)
+                {
+                    ws.Cell(1, i + 1).Value = dgv.Columns[i].HeaderText;
+                }
+
+                // Escribir filas
+                for (int i = 0; i < dgv.Rows.Count; i++)
+                {
+                    for (int j = 0; j < dgv.Columns.Count; j++)
+                    {
+                        ws.Cell(i + 2, j + 1).Value = dgv.Rows[i].Cells[j].Value?.ToString();
+                    }
+                }
+
+                wb.SaveAs(rutaArchivo);
+            }
+        }
+
+        public void ExportarDataTableAExcel(DataTable dt, string rutaArchivo)
+        {
+            using (var wb = new XLWorkbook())
+            {
+                wb.Worksheets.Add(dt, "Hoja1");
+                wb.SaveAs(rutaArchivo);
             }
         }
 
