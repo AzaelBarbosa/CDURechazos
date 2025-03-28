@@ -10,6 +10,7 @@ using System.IO;
 using System.Data.SqlClient;
 using System.Security.Cryptography;
 using ClosedXML.Excel;
+using static CDURechazos.Modulos.basConfiguracion;
 
 namespace CDURechazos.Modulos
 {
@@ -25,39 +26,15 @@ namespace CDURechazos.Modulos
 
             try
             {
-                string filePath = @"C:\CDU\Configuracion.txt";
-
-                // Leer todas las líneas del archivo
-                string[] lines = File.ReadAllLines(filePath);
+                ConfigInfo config = basConfiguracion.LeerConfig(@"C:\CDU\configSecure.dll");
 
                 // Variables para almacenar los datos
-                string dbLocalHost = "";
-                string dbLocalName = "";
-                string dbLocalUser = "";
-                string dbLocalPassword = "";
-
-                string dbUrl = "";
-
-                // Procesar las líneas
-                for (int i = 0; i < lines.Length; i++)
-                {
-                    switch (lines[i])
-                    {
-                        case "--BASE DE DATOS--":
-                            dbLocalHost = lines[i + 1];
-                            dbLocalName = lines[i + 2];
-                            dbLocalUser = lines[i + 3];
-                            dbLocalPassword = lines[i + 4];
-                            break;
-
-                        case "--BASE DE DATOS POSTGRES--":
-                            dbUrl = lines[i + 1];
-                            break;
-                        case "--OTROS--":
-                            basConfiguracion.ModoConexion = Convert.ToInt32( lines[i + 1]);
-                            break;
-                    }
-                }
+                string dbLocalHost = config.Servidor;
+                string dbLocalName = config.BaseDatos;
+                string dbLocalUser = config.Usuario;
+                string dbLocalPassword = config.Contrasena;
+                string dbUrl = config.pgUrl;
+                basConfiguracion.ModoConexion = Convert.ToInt32(config.ModoConexion);
 
                 if (basConfiguracion.ModoConexion == 1)
                 {
@@ -65,7 +42,7 @@ namespace CDURechazos.Modulos
                     sqlServer.Init(300, dbLocalName, dbLocalHost, dbLocalUser, dbLocalPassword);
 
                     // Ejecutar consulta de prueba
-                    sqlServer.ExecSQL("USE Salvage");
+                    sqlServer.ExecSQL("USE " + dbLocalName);
 
                     // Obtener número de sucursal
                     sSQL = "SELECT TOP 1 * FROM Usuarios";

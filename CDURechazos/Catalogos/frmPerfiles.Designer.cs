@@ -47,9 +47,11 @@
             this.gbPerfil.Controls.Add(this.label1);
             this.gbPerfil.Controls.Add(this.btCancelar);
             this.gbPerfil.Controls.Add(this.btAceptar);
-            this.gbPerfil.Location = new System.Drawing.Point(12, 225);
+            this.gbPerfil.Location = new System.Drawing.Point(24, 433);
+            this.gbPerfil.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.gbPerfil.Name = "gbPerfil";
-            this.gbPerfil.Size = new System.Drawing.Size(418, 119);
+            this.gbPerfil.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.gbPerfil.Size = new System.Drawing.Size(836, 229);
             this.gbPerfil.TabIndex = 5;
             this.gbPerfil.TabStop = false;
             this.gbPerfil.Text = "Alta Perfil";
@@ -57,34 +59,38 @@
             // chEstatus
             // 
             this.chEstatus.AutoSize = true;
-            this.chEstatus.Location = new System.Drawing.Point(101, 55);
+            this.chEstatus.Location = new System.Drawing.Point(202, 106);
+            this.chEstatus.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.chEstatus.Name = "chEstatus";
-            this.chEstatus.Size = new System.Drawing.Size(56, 17);
+            this.chEstatus.Size = new System.Drawing.Size(103, 29);
             this.chEstatus.TabIndex = 6;
             this.chEstatus.Text = "Activo";
             this.chEstatus.UseVisualStyleBackColor = true;
             // 
             // txCodigo
             // 
-            this.txCodigo.Location = new System.Drawing.Point(101, 29);
+            this.txCodigo.Location = new System.Drawing.Point(202, 56);
+            this.txCodigo.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txCodigo.Name = "txCodigo";
-            this.txCodigo.Size = new System.Drawing.Size(170, 20);
+            this.txCodigo.Size = new System.Drawing.Size(336, 31);
             this.txCodigo.TabIndex = 4;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(29, 32);
+            this.label1.Location = new System.Drawing.Point(58, 62);
+            this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(66, 13);
+            this.label1.Size = new System.Drawing.Size(131, 25);
             this.label1.TabIndex = 2;
             this.label1.Text = "Descripcion:";
             // 
             // btCancelar
             // 
-            this.btCancelar.Location = new System.Drawing.Point(208, 87);
+            this.btCancelar.Location = new System.Drawing.Point(416, 167);
+            this.btCancelar.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btCancelar.Name = "btCancelar";
-            this.btCancelar.Size = new System.Drawing.Size(75, 23);
+            this.btCancelar.Size = new System.Drawing.Size(150, 44);
             this.btCancelar.TabIndex = 1;
             this.btCancelar.Text = "Cancelar";
             this.btCancelar.UseVisualStyleBackColor = true;
@@ -92,9 +98,10 @@
             // 
             // btAceptar
             // 
-            this.btAceptar.Location = new System.Drawing.Point(101, 87);
+            this.btAceptar.Location = new System.Drawing.Point(202, 167);
+            this.btAceptar.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btAceptar.Name = "btAceptar";
-            this.btAceptar.Size = new System.Drawing.Size(75, 23);
+            this.btAceptar.Size = new System.Drawing.Size(150, 44);
             this.btAceptar.TabIndex = 0;
             this.btAceptar.Text = "Aceptar";
             this.btAceptar.UseVisualStyleBackColor = true;
@@ -104,33 +111,37 @@
             // 
             this.dgvPerfil.AllowUserToAddRows = false;
             this.dgvPerfil.AllowUserToDeleteRows = false;
+            this.dgvPerfil.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvPerfil.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPerfil.Location = new System.Drawing.Point(12, 55);
+            this.dgvPerfil.Location = new System.Drawing.Point(24, 106);
+            this.dgvPerfil.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.dgvPerfil.Name = "dgvPerfil";
             this.dgvPerfil.ReadOnly = true;
             this.dgvPerfil.RowHeadersWidth = 82;
-            this.dgvPerfil.Size = new System.Drawing.Size(418, 153);
+            this.dgvPerfil.Size = new System.Drawing.Size(836, 294);
             this.dgvPerfil.TabIndex = 4;
             this.dgvPerfil.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPerfil_CellContentDoubleClick);
             // 
             // btNewPerfil
             // 
             this.btNewPerfil.Image = global::CDURechazos.Properties.Resources._1486564407_plus_green_81521;
-            this.btNewPerfil.Location = new System.Drawing.Point(12, 12);
+            this.btNewPerfil.Location = new System.Drawing.Point(24, 23);
+            this.btNewPerfil.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btNewPerfil.Name = "btNewPerfil";
-            this.btNewPerfil.Size = new System.Drawing.Size(42, 42);
+            this.btNewPerfil.Size = new System.Drawing.Size(84, 81);
             this.btNewPerfil.TabIndex = 3;
             this.btNewPerfil.UseVisualStyleBackColor = true;
             this.btNewPerfil.Click += new System.EventHandler(this.btNewPerfil_Click);
             // 
             // frmPerfiles
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(439, 351);
+            this.ClientSize = new System.Drawing.Size(878, 675);
             this.Controls.Add(this.gbPerfil);
             this.Controls.Add(this.dgvPerfil);
             this.Controls.Add(this.btNewPerfil);
+            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmPerfiles";

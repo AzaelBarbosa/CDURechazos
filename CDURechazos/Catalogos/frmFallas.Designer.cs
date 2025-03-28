@@ -45,9 +45,10 @@
             // btNewFalla
             // 
             this.btNewFalla.Image = global::CDURechazos.Properties.Resources._1486564407_plus_green_81521;
-            this.btNewFalla.Location = new System.Drawing.Point(12, 12);
+            this.btNewFalla.Location = new System.Drawing.Point(24, 23);
+            this.btNewFalla.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btNewFalla.Name = "btNewFalla";
-            this.btNewFalla.Size = new System.Drawing.Size(42, 42);
+            this.btNewFalla.Size = new System.Drawing.Size(84, 81);
             this.btNewFalla.TabIndex = 0;
             this.btNewFalla.UseVisualStyleBackColor = true;
             this.btNewFalla.Click += new System.EventHandler(this.btNewFalla_Click);
@@ -56,12 +57,14 @@
             // 
             this.dgvFallas.AllowUserToAddRows = false;
             this.dgvFallas.AllowUserToDeleteRows = false;
+            this.dgvFallas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvFallas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvFallas.Location = new System.Drawing.Point(12, 55);
+            this.dgvFallas.Location = new System.Drawing.Point(24, 106);
+            this.dgvFallas.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.dgvFallas.Name = "dgvFallas";
             this.dgvFallas.ReadOnly = true;
             this.dgvFallas.RowHeadersWidth = 82;
-            this.dgvFallas.Size = new System.Drawing.Size(418, 153);
+            this.dgvFallas.Size = new System.Drawing.Size(836, 294);
             this.dgvFallas.TabIndex = 1;
             this.dgvFallas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFallas_CellContentClick);
             this.dgvFallas.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFallas_CellContentDoubleClick);
@@ -75,9 +78,11 @@
             this.gbFallas.Controls.Add(this.label1);
             this.gbFallas.Controls.Add(this.btCancelar);
             this.gbFallas.Controls.Add(this.btAceptar);
-            this.gbFallas.Location = new System.Drawing.Point(12, 225);
+            this.gbFallas.Location = new System.Drawing.Point(24, 433);
+            this.gbFallas.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.gbFallas.Name = "gbFallas";
-            this.gbFallas.Size = new System.Drawing.Size(418, 149);
+            this.gbFallas.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.gbFallas.Size = new System.Drawing.Size(836, 287);
             this.gbFallas.TabIndex = 2;
             this.gbFallas.TabStop = false;
             this.gbFallas.Text = "Alta Falla";
@@ -85,51 +90,57 @@
             // chEstatus
             // 
             this.chEstatus.AutoSize = true;
-            this.chEstatus.Location = new System.Drawing.Point(78, 83);
+            this.chEstatus.Location = new System.Drawing.Point(156, 160);
+            this.chEstatus.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.chEstatus.Name = "chEstatus";
-            this.chEstatus.Size = new System.Drawing.Size(56, 17);
+            this.chEstatus.Size = new System.Drawing.Size(103, 29);
             this.chEstatus.TabIndex = 6;
             this.chEstatus.Text = "Activo";
             this.chEstatus.UseVisualStyleBackColor = true;
             // 
             // txNombre
             // 
-            this.txNombre.Location = new System.Drawing.Point(78, 57);
+            this.txNombre.Location = new System.Drawing.Point(156, 110);
+            this.txNombre.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txNombre.Name = "txNombre";
-            this.txNombre.Size = new System.Drawing.Size(255, 20);
+            this.txNombre.Size = new System.Drawing.Size(506, 31);
             this.txNombre.TabIndex = 5;
             this.txNombre.TextChanged += new System.EventHandler(this.txNombre_TextChanged);
             // 
             // txCodigo
             // 
-            this.txCodigo.Location = new System.Drawing.Point(78, 29);
+            this.txCodigo.Location = new System.Drawing.Point(156, 56);
+            this.txCodigo.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txCodigo.Name = "txCodigo";
-            this.txCodigo.Size = new System.Drawing.Size(170, 20);
+            this.txCodigo.Size = new System.Drawing.Size(336, 31);
             this.txCodigo.TabIndex = 4;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(25, 60);
+            this.label2.Location = new System.Drawing.Point(50, 115);
+            this.label2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(47, 13);
+            this.label2.Size = new System.Drawing.Size(93, 25);
             this.label2.TabIndex = 3;
             this.label2.Text = "Nombre:";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(29, 32);
+            this.label1.Location = new System.Drawing.Point(58, 62);
+            this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(43, 13);
+            this.label1.Size = new System.Drawing.Size(86, 25);
             this.label1.TabIndex = 2;
             this.label1.Text = "Codigo:";
             // 
             // btCancelar
             // 
-            this.btCancelar.Location = new System.Drawing.Point(211, 120);
+            this.btCancelar.Location = new System.Drawing.Point(422, 231);
+            this.btCancelar.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btCancelar.Name = "btCancelar";
-            this.btCancelar.Size = new System.Drawing.Size(75, 23);
+            this.btCancelar.Size = new System.Drawing.Size(150, 44);
             this.btCancelar.TabIndex = 1;
             this.btCancelar.Text = "Cancelar";
             this.btCancelar.UseVisualStyleBackColor = true;
@@ -137,9 +148,10 @@
             // 
             // btAceptar
             // 
-            this.btAceptar.Location = new System.Drawing.Point(104, 120);
+            this.btAceptar.Location = new System.Drawing.Point(208, 231);
+            this.btAceptar.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btAceptar.Name = "btAceptar";
-            this.btAceptar.Size = new System.Drawing.Size(75, 23);
+            this.btAceptar.Size = new System.Drawing.Size(150, 44);
             this.btAceptar.TabIndex = 0;
             this.btAceptar.Text = "Aceptar";
             this.btAceptar.UseVisualStyleBackColor = true;
@@ -147,12 +159,13 @@
             // 
             // frmFallas
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(442, 384);
+            this.ClientSize = new System.Drawing.Size(884, 738);
             this.Controls.Add(this.gbFallas);
             this.Controls.Add(this.dgvFallas);
             this.Controls.Add(this.btNewFalla);
+            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmFallas";

@@ -41,7 +41,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(29, 26);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(57, 16);
+            this.label1.Size = new System.Drawing.Size(109, 30);
             this.label1.TabIndex = 0;
             this.label1.Text = "Usuario:";
             // 
@@ -50,7 +50,7 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(7, 65);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(79, 16);
+            this.label2.Size = new System.Drawing.Size(152, 30);
             this.label2.TabIndex = 1;
             this.label2.Text = "Contraseña:";
             // 
@@ -59,16 +59,17 @@
             this.txPassword.Location = new System.Drawing.Point(92, 65);
             this.txPassword.Name = "txPassword";
             this.txPassword.PasswordChar = '*';
-            this.txPassword.Size = new System.Drawing.Size(192, 22);
-            this.txPassword.TabIndex = 2;
+            this.txPassword.Size = new System.Drawing.Size(192, 37);
+            this.txPassword.TabIndex = 1;
             // 
             // cboUsuarios
             // 
+            this.cboUsuarios.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cboUsuarios.FormattingEnabled = true;
             this.cboUsuarios.Location = new System.Drawing.Point(92, 23);
             this.cboUsuarios.Name = "cboUsuarios";
-            this.cboUsuarios.Size = new System.Drawing.Size(192, 24);
-            this.cboUsuarios.TabIndex = 3;
+            this.cboUsuarios.Size = new System.Drawing.Size(192, 38);
+            this.cboUsuarios.TabIndex = 0;
             this.cboUsuarios.SelectedIndexChanged += new System.EventHandler(this.cboUsuarios_SelectedIndexChanged);
             // 
             // btEntrar
@@ -76,7 +77,7 @@
             this.btEntrar.Location = new System.Drawing.Point(80, 114);
             this.btEntrar.Name = "btEntrar";
             this.btEntrar.Size = new System.Drawing.Size(75, 23);
-            this.btEntrar.TabIndex = 4;
+            this.btEntrar.TabIndex = 2;
             this.btEntrar.Text = "Aceptar";
             this.btEntrar.UseVisualStyleBackColor = true;
             this.btEntrar.Click += new System.EventHandler(this.btEntrar_Click);
@@ -86,14 +87,14 @@
             this.btCancelar.Location = new System.Drawing.Point(177, 114);
             this.btCancelar.Name = "btCancelar";
             this.btCancelar.Size = new System.Drawing.Size(75, 23);
-            this.btCancelar.TabIndex = 5;
+            this.btCancelar.TabIndex = 3;
             this.btCancelar.Text = "Cancelar";
             this.btCancelar.UseVisualStyleBackColor = true;
             this.btCancelar.Click += new System.EventHandler(this.btCancelar_Click);
             // 
             // frmLogin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(15F, 30F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(314, 152);
             this.Controls.Add(this.btCancelar);

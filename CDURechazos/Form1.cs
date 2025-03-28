@@ -30,7 +30,7 @@ namespace CDURechazos
         private void frmLogin_Load(object sender, EventArgs e)
         {
 
-            string filePath = @"C:\CDU\Configuracion.txt";
+            string filePath = @"C:\CDU\configSecure.dll";
             if (!File.Exists(filePath))
             {
                 MessageBox.Show("El archivo de configuración no existe.\nSe procederá a abrir el asistente para crear y configurar la conexión.",

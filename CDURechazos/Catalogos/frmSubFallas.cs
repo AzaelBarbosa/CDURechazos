@@ -48,7 +48,7 @@ namespace CDURechazos.Catalogos
 
             if (basConfiguracion.ModoConexion == 1)
             {
-                //dtRespon = sqlServer.ExecSQLReturnDS("SELECT * FROM Fallas", "Fallas");
+                dtRespon = sqlServer.ExecSQLReturnDS("SELECT * FROM Fallas", "Fallas");
             }
             else
             {
