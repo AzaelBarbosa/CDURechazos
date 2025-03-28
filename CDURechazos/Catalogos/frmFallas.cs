@@ -17,6 +17,7 @@ namespace CDURechazos.Catalogos
         DataTable dtFallas;
         int IdFalla;
         int intEditar;
+        basFunctions basFunctions = new basFunctions();
         public frmFallas()
         {
             InitializeComponent();
@@ -86,6 +87,7 @@ namespace CDURechazos.Catalogos
                     dgvFallas.DataSource = dtFallas;
                     dgvFallas.Refresh();
                     this.Height = 255;
+                    basFunctions.InsertarHistorial("Se ha creado la falla " + txNombre.Text);
                 }
                 else
                 {
@@ -95,6 +97,7 @@ namespace CDURechazos.Catalogos
                     dgvFallas.DataSource = dtFallas;
                     dgvFallas.Refresh();
                     this.Height = 255;
+                    basFunctions.InsertarHistorial("Se ha editado la falla " + txNombre.Text);
                 }
             }
             else
@@ -107,6 +110,7 @@ namespace CDURechazos.Catalogos
                     dgvFallas.DataSource = dtFallas;
                     dgvFallas.Refresh();
                     this.Height = 255;
+                    basFunctions.InsertarHistorial("Se ha creado la falla " + txNombre.Text);
                 }
                 else
                 {
@@ -116,6 +120,7 @@ namespace CDURechazos.Catalogos
                     dgvFallas.DataSource = dtFallas;
                     dgvFallas.Refresh();
                     this.Height = 255;
+                    basFunctions.InsertarHistorial("Se ha editado la falla " + txNombre.Text);
                 }
             }
         }

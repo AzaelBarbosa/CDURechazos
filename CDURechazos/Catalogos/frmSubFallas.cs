@@ -19,6 +19,7 @@ namespace CDURechazos.Catalogos
         int IdSubFalla;
         int intEditar;
         DataSet dtRespon;
+        basFunctions basFunctions = new basFunctions();
         public frmSubFallas()
         {
             InitializeComponent();
@@ -104,6 +105,7 @@ namespace CDURechazos.Catalogos
                     dgvFallas.DataSource = dtSubFallas;
                     dgvFallas.Refresh();
                     this.Height = 300;
+                    basFunctions.InsertarHistorial("Se ha creado la subfalla " + txNombre.Text);
                 }
                 else
                 {
@@ -113,6 +115,7 @@ namespace CDURechazos.Catalogos
                     dgvFallas.DataSource = dtSubFallas;
                     dgvFallas.Refresh();
                     this.Height = 300;
+                    basFunctions.InsertarHistorial("Se ha editado la subfalla " + txNombre.Text);
                 }
             }
             else
@@ -125,6 +128,7 @@ namespace CDURechazos.Catalogos
                     dgvFallas.DataSource = dtSubFallas;
                     dgvFallas.Refresh();
                     this.Height = 300;
+                    basFunctions.InsertarHistorial("Se ha creado la subfalla " + txNombre.Text);
                 }
                 else
                 {
@@ -134,6 +138,7 @@ namespace CDURechazos.Catalogos
                     dgvFallas.DataSource = dtSubFallas;
                     dgvFallas.Refresh();
                     this.Height = 300;
+                    basFunctions.InsertarHistorial("Se ha editado la subfalla " + txNombre.Text);
                 }
             }
         }

@@ -16,6 +16,7 @@ namespace CDURechazos
     {
         public int intEditar;
         public int idRegistro;
+        basFunctions basFunctions = new basFunctions();
         public frmEditarRegistro()
         {
             InitializeComponent();
@@ -111,11 +112,13 @@ namespace CDURechazos
                 {
                     sSQL = "INSERT INTO RegistroFallas (Serie, Codigo, Nombre, idFalla, idSubFalla) VALUES('" + txSerie.Text + "','" + txCodigo.Text + "'" + txNombre.Text + "," + cboFalla.SelectedValue + "," + cboSubfalla.SelectedValue + ")";
                     sqlServer.ExecSQL(sSQL);
+                    basFunctions.InsertarHistorial("Se ha insertado un nuevo registro de falla con Serie:" + txSerie.Text);
                 }
                 else
                 {
                     sSQL = "UPDATE RegistroFallas SET Serie = '" + txSerie.Text + "', Codigo = '" + txCodigo.Text + "', Nombre = '" + txNombre.Text + "', idFalla = " + cboFalla.SelectedValue + ", idSubFalla = " + cboSubfalla.SelectedValue + " WHERE id = " + idRegistro;
                     sqlServer.ExecSQL(sSQL);
+                    basFunctions.InsertarHistorial("Se ha actualizado un registro de falla con Serie:" + txSerie.Text);
                 }
             }
             else
@@ -124,11 +127,13 @@ namespace CDURechazos
                 {
                     sSQL = "INSERT INTO public.\"RegistroFallas\" (\"Serie\", \"Codigo\", \"Nombre\", \"idFalla\", \"idSubFalla\") VALUES('" + txSerie.Text + "','" + txCodigo.Text + "','" + txNombre.Text + "'," + cboFalla.SelectedValue + "," + cboSubfalla.SelectedValue + ")";
                     PgSQLHelper.ExecSQL(sSQL);
+                    basFunctions.InsertarHistorial("Se ha insertado un nuevo registro de falla con Serie:" + txSerie.Text);
                 }
                 else
                 {
                     sSQL = "UPDATE public.\"RegistroFallas\" SET \"Serie\" = '" + txSerie.Text + "', \"Codigo\" = '" + txCodigo.Text + "', \"Nombre\" = '" + txNombre.Text + "', \"idFalla\" = " + cboFalla.SelectedValue + ", \"idSubFalla\" = " + cboSubfalla.SelectedValue + " WHERE \"id\" = " + idRegistro;
                     PgSQLHelper.ExecSQL(sSQL);
+                    basFunctions.InsertarHistorial("Se ha actualizado un registro de falla con Serie:" + txSerie.Text);
                 }
             }
             this.Close();

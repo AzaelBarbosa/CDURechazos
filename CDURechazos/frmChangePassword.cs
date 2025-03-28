@@ -15,6 +15,7 @@ namespace CDURechazos
     public partial class frmChangePassword: Form
     {
         int idUsuarioGlobal;
+        basFunctions basFunctions = new basFunctions();
         public frmChangePassword()
         {
             InitializeComponent();

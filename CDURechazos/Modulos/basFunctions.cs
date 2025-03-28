@@ -115,5 +115,20 @@ namespace CDURechazos.Modulos
             }
         }
 
+        public void InsertarHistorial(string sAccion)
+        {
+            string sSQL;
+            if (basConfiguracion.ModoConexion == 1)
+            {
+                sSQL = "INSERT INTO LogFallas (idUsuario, Descripcion) VALUES(" + basConfiguracion.UserID + ",'" + sAccion + "')";
+                sqlServer.ExecSQL(sSQL);
+            }
+            else
+            {
+                sSQL = "INSERT INTO public.\"LogFallas\" (\"idUsuario\", \"Descripcion\") VALUES(" + basConfiguracion.UserID + ",'" + sAccion + "')";
+                PgSQLHelper.ExecSQL(sSQL);
+            }
+        }
+
     }
 }

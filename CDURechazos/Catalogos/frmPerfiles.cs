@@ -17,7 +17,7 @@ namespace CDURechazos.Catalogos
         DataTable dtPerfiles;
         int IdPerfil;
         int intEditar;
-
+        basFunctions basFunctions = new basFunctions();
         public frmPerfiles()
         {
             InitializeComponent();
@@ -79,6 +79,7 @@ namespace CDURechazos.Catalogos
                     dgvPerfil.DataSource = dtPerfiles;
                     dgvPerfil.Refresh();
                     this.Height = 255;
+                    basFunctions.InsertarHistorial("Se ha creado el perfil " + txCodigo.Text);
                 }
                 else
                 {
@@ -88,6 +89,7 @@ namespace CDURechazos.Catalogos
                     dgvPerfil.DataSource = dtPerfiles;
                     dgvPerfil.Refresh();
                     this.Height = 255;
+                    basFunctions.InsertarHistorial("Se ha editado el perfil " + txCodigo.Text);
                 }
             }
             else
@@ -100,6 +102,7 @@ namespace CDURechazos.Catalogos
                     dgvPerfil.DataSource = dtPerfiles;
                     dgvPerfil.Refresh();
                     this.Height = 255;
+                    basFunctions.InsertarHistorial("Se ha creado el perfil " + txCodigo.Text);
                 }
                 else
                 {
@@ -109,6 +112,7 @@ namespace CDURechazos.Catalogos
                     dgvPerfil.DataSource = dtPerfiles;
                     dgvPerfil.Refresh();
                     this.Height = 255;
+                    basFunctions.InsertarHistorial("Se ha editado el perfil " + txCodigo.Text);
                 }
             }
         }

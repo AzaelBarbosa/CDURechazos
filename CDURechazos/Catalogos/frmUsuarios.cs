@@ -17,6 +17,7 @@ namespace CDURechazos.Catalogos
         DataTable dtUsuarios;
         int idUsuario;
         int intEditar;
+        basFunctions basFunctions = new basFunctions();
         public frmUsuarios()
         {
             InitializeComponent();
@@ -135,6 +136,7 @@ namespace CDURechazos.Catalogos
                     dgvUsuarios.DataSource = dtUsuarios;
                     dgvUsuarios.Refresh();
                     this.Height = 322;
+                    basFunctions.InsertarHistorial("Se ha creado el usuario " + txUsuario.Text);
                 }
                 else
                 {
@@ -144,6 +146,7 @@ namespace CDURechazos.Catalogos
                     dgvUsuarios.DataSource = dtUsuarios;
                     dgvUsuarios.Refresh();
                     this.Height = 322;
+                    basFunctions.InsertarHistorial("Se ha modificado el usuario " + txUsuario.Text);
                 }
             }
             else
@@ -156,6 +159,7 @@ namespace CDURechazos.Catalogos
                     dgvUsuarios.DataSource = dtUsuarios;
                     dgvUsuarios.Refresh();
                     this.Height = 322;
+                    basFunctions.InsertarHistorial("Se ha creado el usuario " + txUsuario.Text);
                 }
                 else
                 {
@@ -165,6 +169,7 @@ namespace CDURechazos.Catalogos
                     dgvUsuarios.DataSource = dtUsuarios;
                     dgvUsuarios.Refresh();
                     this.Height = 322;
+                    basFunctions.InsertarHistorial("Se ha modificado el usuario " + txUsuario.Text);
                 }
             }
         }
