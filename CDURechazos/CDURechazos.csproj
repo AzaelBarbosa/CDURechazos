@@ -120,6 +120,12 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Base Forms\frmCatalogos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Base Forms\frmCatalogos.Designer.cs">
+      <DependentUpon>frmCatalogos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Catalogos\frmFallas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -198,6 +204,9 @@
     <Compile Include="Modulos\basFunctions.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Base Forms\frmCatalogos.resx">
+      <DependentUpon>frmCatalogos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Catalogos\frmFallas.resx">
       <DependentUpon>frmFallas.cs</DependentUpon>
     </EmbeddedResource>
@@ -260,6 +269,36 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\1486564407-plus-green_81521.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sistema-de-seguridad.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\microsoft-excel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\reporte-de-negocios.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\registro-en-linea.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\persona-clave.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\falla %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\falla.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\usuario-verificado.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eliminar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\disco-flexible.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

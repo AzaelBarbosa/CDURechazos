@@ -113,5 +113,12 @@ namespace CDURechazos
                 System.Diagnostics.Process.Start(psi);
             }
         }
-     }
+
+        private void logToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmLogs frmLog = new frmLogs();
+            frmLog.MdiParent = this;
+            frmLog.Show();
+        }
+    }
 }

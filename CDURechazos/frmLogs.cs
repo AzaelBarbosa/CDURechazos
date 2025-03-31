@@ -43,10 +43,22 @@ namespace CDURechazos
         {
             if (dtHistorial == null) return;
 
-                DateTime desde = dtDesde.Value.Date;
-                DateTime hasta = dtHasta.Value.Date;
+            DateTime desde = dtDesde.Value.Date;
+            DateTime hasta = dtHasta.Value.Date;
+
+            if (desde < hasta)
+            {
+                MessageBox.Show("La fecha de inicio no puede ser mayor a la fecha final.");
+                return;
+            }
+
+            if (hasta > desde) {
+                MessageBox.Show("La fecha final no puede ser menor a la fecha inicial.");
+                return;
+            }
+                
                 // Filtro considerando solo la parte de fecha (sin hora)
-                string filtro = $"FechaAlta >= #{desde:MM/dd/yyyy}# AND FechaAlta <= #{hasta:MM/dd/yyyy}#";
+                string filtro = $"Fecha >= #{desde:MM/dd/yyyy}# AND Fecha <= #{hasta:MM/dd/yyyy}#";
                 DataView dv = new DataView(dtHistorial);
                 dv.RowFilter = filtro;
                 dgvLogs.DataSource = dv;
@@ -58,13 +70,13 @@ namespace CDURechazos
         {
             if (basConfiguracion.ModoConexion == 1)
             {
-                dtHistorial = sqlServer.ExecSQLReturnDT("SELECT U.IdUsuario,U.Usuario,U.Correo,U.NombreUsuario AS [Nombre Usuario], U.Estatus, P.Descripcion AS Perfil FROM dbo.Usuarios U INNER JOIN dbo.Perfiles P ON P.IdPerfil = U.IdPerfil WHERE U.Estatus = 1", "Usuarios");
+                dtHistorial = sqlServer.ExecSQLReturnDT("SELECT U.Usuario, U.NombreUsuario AS [Nombre Usuario], LF.Descripcion, LF.FechaAlta AS Fecha FROM LogFallas LF INNER JOIN Usuarios U ON LF.idUsuario = U.IdUsuario", "Usuarios");
                 dgvLogs.DataSource = dtHistorial;
                 dgvLogs.Refresh();
             }
             else
             {
-                dtHistorial = PgSQLHelper.ExecSQLReturnDT(@"SELECT U.""IdUsuario"",U.""Usuario"",U.""Correo"",U.""NombreUsuario"" AS ""Nombre Usuario"",U.""Estatus"", P.""Descripcion"" AS ""Perfil"" FROM public.""Usuarios"" U INNER JOIN public.""Perfiles"" P ON P.""IdPerfil"" = U.""IdPerfil"" WHERE U.""Estatus"" = true;", "Usuarios");
+                dtHistorial = PgSQLHelper.ExecSQLReturnDT(@"SELECT U.Usuario, U.NombreUsuario AS [Nombre Usuario], LF.Descripcion, LF.FechaAlta AS Fecha FROM LogFallas LF INNER JOIN Usuarios U ON LF.idUsuario = U.IdUsuario", "Usuarios");
                 dgvLogs.DataSource = dtHistorial;
                 dgvLogs.Refresh();
             }

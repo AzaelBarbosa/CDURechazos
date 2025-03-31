@@ -110,13 +110,13 @@ namespace CDURechazos
             {
                 if (intEditar == 0)
                 {
-                    sSQL = "INSERT INTO RegistroFallas (Serie, Codigo, Nombre, idFalla, idSubFalla) VALUES('" + txSerie.Text + "','" + txCodigo.Text + "'" + txNombre.Text + "," + cboFalla.SelectedValue + "," + cboSubfalla.SelectedValue + ")";
+                    sSQL = "INSERT INTO RegistroFallas (Serie, Codigo, Nombre, idFalla, idSubFalla, Comentarios) VALUES('" + txSerie.Text + "','" + txCodigo.Text + "','" + txNombre.Text + "'," + cboFalla.SelectedValue + "," + cboSubfalla.SelectedValue + ", '" + txComentario.Text + "')";
                     sqlServer.ExecSQL(sSQL);
                     basFunctions.InsertarHistorial("Se ha insertado un nuevo registro de falla con Serie:" + txSerie.Text);
                 }
                 else
                 {
-                    sSQL = "UPDATE RegistroFallas SET Serie = '" + txSerie.Text + "', Codigo = '" + txCodigo.Text + "', Nombre = '" + txNombre.Text + "', idFalla = " + cboFalla.SelectedValue + ", idSubFalla = " + cboSubfalla.SelectedValue + " WHERE id = " + idRegistro;
+                    sSQL = "UPDATE RegistroFallas SET Serie = '" + txSerie.Text + "', Codigo = '" + txCodigo.Text + "', Nombre = '" + txNombre.Text + "', idFalla = " + cboFalla.SelectedValue + ", idSubFalla = " + cboSubfalla.SelectedValue + ", Comentarios = '" + txComentario.Text + "' WHERE id = " + idRegistro;
                     sqlServer.ExecSQL(sSQL);
                     basFunctions.InsertarHistorial("Se ha actualizado un registro de falla con Serie:" + txSerie.Text);
                 }

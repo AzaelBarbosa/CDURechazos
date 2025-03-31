@@ -130,5 +130,11 @@ namespace CDURechazos.Modulos
             }
         }
 
+        public interface ICatalogo
+        {
+            void Nuevo();
+            void Guardar();
+            void Eliminar();
+        }
     }
 }

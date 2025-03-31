@@ -33,9 +33,7 @@
             this.txCodigo = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btCancelar = new System.Windows.Forms.Button();
-            this.btAceptar = new System.Windows.Forms.Button();
             this.dgvPerfil = new System.Windows.Forms.DataGridView();
-            this.btNewPerfil = new System.Windows.Forms.Button();
             this.gbPerfil.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPerfil)).BeginInit();
             this.SuspendLayout();
@@ -46,11 +44,10 @@
             this.gbPerfil.Controls.Add(this.txCodigo);
             this.gbPerfil.Controls.Add(this.label1);
             this.gbPerfil.Controls.Add(this.btCancelar);
-            this.gbPerfil.Controls.Add(this.btAceptar);
             this.gbPerfil.Location = new System.Drawing.Point(24, 433);
-            this.gbPerfil.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.gbPerfil.Margin = new System.Windows.Forms.Padding(6);
             this.gbPerfil.Name = "gbPerfil";
-            this.gbPerfil.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.gbPerfil.Padding = new System.Windows.Forms.Padding(6);
             this.gbPerfil.Size = new System.Drawing.Size(836, 229);
             this.gbPerfil.TabIndex = 5;
             this.gbPerfil.TabStop = false;
@@ -60,7 +57,7 @@
             // 
             this.chEstatus.AutoSize = true;
             this.chEstatus.Location = new System.Drawing.Point(202, 106);
-            this.chEstatus.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.chEstatus.Margin = new System.Windows.Forms.Padding(6);
             this.chEstatus.Name = "chEstatus";
             this.chEstatus.Size = new System.Drawing.Size(103, 29);
             this.chEstatus.TabIndex = 6;
@@ -70,7 +67,7 @@
             // txCodigo
             // 
             this.txCodigo.Location = new System.Drawing.Point(202, 56);
-            this.txCodigo.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txCodigo.Margin = new System.Windows.Forms.Padding(6);
             this.txCodigo.Name = "txCodigo";
             this.txCodigo.Size = new System.Drawing.Size(336, 31);
             this.txCodigo.TabIndex = 4;
@@ -87,25 +84,14 @@
             // 
             // btCancelar
             // 
-            this.btCancelar.Location = new System.Drawing.Point(416, 167);
-            this.btCancelar.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btCancelar.Location = new System.Drawing.Point(674, 173);
+            this.btCancelar.Margin = new System.Windows.Forms.Padding(6);
             this.btCancelar.Name = "btCancelar";
             this.btCancelar.Size = new System.Drawing.Size(150, 44);
             this.btCancelar.TabIndex = 1;
             this.btCancelar.Text = "Cancelar";
             this.btCancelar.UseVisualStyleBackColor = true;
             this.btCancelar.Click += new System.EventHandler(this.btCancelar_Click);
-            // 
-            // btAceptar
-            // 
-            this.btAceptar.Location = new System.Drawing.Point(202, 167);
-            this.btAceptar.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.btAceptar.Name = "btAceptar";
-            this.btAceptar.Size = new System.Drawing.Size(150, 44);
-            this.btAceptar.TabIndex = 0;
-            this.btAceptar.Text = "Aceptar";
-            this.btAceptar.UseVisualStyleBackColor = true;
-            this.btAceptar.Click += new System.EventHandler(this.btAceptar_Click);
             // 
             // dgvPerfil
             // 
@@ -114,24 +100,13 @@
             this.dgvPerfil.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvPerfil.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPerfil.Location = new System.Drawing.Point(24, 106);
-            this.dgvPerfil.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.dgvPerfil.Margin = new System.Windows.Forms.Padding(6);
             this.dgvPerfil.Name = "dgvPerfil";
             this.dgvPerfil.ReadOnly = true;
             this.dgvPerfil.RowHeadersWidth = 82;
             this.dgvPerfil.Size = new System.Drawing.Size(836, 294);
             this.dgvPerfil.TabIndex = 4;
             this.dgvPerfil.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPerfil_CellContentDoubleClick);
-            // 
-            // btNewPerfil
-            // 
-            this.btNewPerfil.Image = global::CDURechazos.Properties.Resources._1486564407_plus_green_81521;
-            this.btNewPerfil.Location = new System.Drawing.Point(24, 23);
-            this.btNewPerfil.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.btNewPerfil.Name = "btNewPerfil";
-            this.btNewPerfil.Size = new System.Drawing.Size(84, 81);
-            this.btNewPerfil.TabIndex = 3;
-            this.btNewPerfil.UseVisualStyleBackColor = true;
-            this.btNewPerfil.Click += new System.EventHandler(this.btNewPerfil_Click);
             // 
             // frmPerfiles
             // 
@@ -140,17 +115,17 @@
             this.ClientSize = new System.Drawing.Size(878, 675);
             this.Controls.Add(this.gbPerfil);
             this.Controls.Add(this.dgvPerfil);
-            this.Controls.Add(this.btNewPerfil);
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "frmPerfiles";
             this.Text = "Perfiles";
             this.Load += new System.EventHandler(this.frmPerfiles_Load);
+            this.Controls.SetChildIndex(this.dgvPerfil, 0);
+            this.Controls.SetChildIndex(this.gbPerfil, 0);
             this.gbPerfil.ResumeLayout(false);
             this.gbPerfil.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPerfil)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -161,8 +136,6 @@
         private System.Windows.Forms.TextBox txCodigo;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btCancelar;
-        private System.Windows.Forms.Button btAceptar;
         private System.Windows.Forms.DataGridView dgvPerfil;
-        private System.Windows.Forms.Button btNewPerfil;
     }
 }

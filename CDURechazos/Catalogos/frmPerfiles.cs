@@ -7,12 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CDURechazos.Base_Forms;
 using CDURechazos.Clases;
 using CDURechazos.Modulos;
 
 namespace CDURechazos.Catalogos
 {
-    public partial class frmPerfiles: Form
+    public partial class frmPerfiles: frmCatalogos
     {
         DataTable dtPerfiles;
         int IdPerfil;
@@ -23,23 +24,7 @@ namespace CDURechazos.Catalogos
             InitializeComponent();
         }
 
-        private void frmPerfiles_Load(object sender, EventArgs e)
-        {
-            if (basConfiguracion.ModoConexion == 1)
-            {
-                dtPerfiles = sqlServer.ExecSQLReturnDT("SELECT * FROM Perfiles", "Perfiles");
-                dgvPerfil.DataSource = dtPerfiles;
-                dgvPerfil.Refresh();
-            }
-            else
-            {
-                dtPerfiles = PgSQLHelper.ExecSQLReturnDT(@"SELECT * FROM public.""Perfiles""", "Perfiles");
-                dgvPerfil.DataSource = dtPerfiles;
-                dgvPerfil.Refresh();
-            }
-        }
-
-        private void btNewPerfil_Click(object sender, EventArgs e)
+        protected override void Nuevo()
         {
             intEditar = 0;
             Height = 392;
@@ -50,16 +35,7 @@ namespace CDURechazos.Catalogos
             this.Text = "Nuevo Perfil";
         }
 
-        private void btCancelar_Click(object sender, EventArgs e)
-        {
-            Height = 255;
-            intEditar = 0;
-            gbPerfil.Visible = false;
-            txCodigo.Text = "";
-            chEstatus.Checked = true;
-        }
-
-        private void btAceptar_Click(object sender, EventArgs e)
+        protected override void Guardar()
         {
             string sSQL;
 
@@ -115,6 +91,80 @@ namespace CDURechazos.Catalogos
                     basFunctions.InsertarHistorial("Se ha editado el perfil " + txCodigo.Text);
                 }
             }
+        }
+
+        private void CargarDatos()
+        {
+            if (basConfiguracion.ModoConexion == 1)
+            {
+                dtPerfiles = sqlServer.ExecSQLReturnDT("SELECT * FROM Perfiles", "Perfiles");
+                dgvPerfil.DataSource = dtPerfiles;
+                dgvPerfil.Refresh();
+            }
+            else
+            {
+                dtPerfiles = PgSQLHelper.ExecSQLReturnDT(@"SELECT * FROM public.""Perfiles""", "Perfiles");
+                dgvPerfil.DataSource = dtPerfiles;
+                dgvPerfil.Refresh();
+            }
+        }
+        protected override void Eliminar()
+        {
+            if (dgvPerfil.CurrentRow == null)
+            {
+                MessageBox.Show("Por favor selecciona un registro para eliminar.");
+                return;
+            }
+
+            // Confirmación
+            DialogResult result = MessageBox.Show("¿Estás seguro de que deseas eliminar este registro?",
+                                                  "Confirmar eliminación",
+                                                  MessageBoxButtons.YesNo,
+                                                  MessageBoxIcon.Question);
+
+            if (result != DialogResult.Yes)
+                return;
+
+            // Suponiendo que tu columna clave se llama "IdUsuario"
+            int id = Convert.ToInt32(dgvPerfil.CurrentRow.Cells["IdPerfil"].Value);
+
+            try
+            {
+                string query = $"DELETE FROM Perfiles WHERE IdPerfil = {id}";
+                sqlServer.ExecSQL(query); // Usa tu clase helper para ejecutar
+
+                MessageBox.Show("Registro eliminado correctamente.");
+                CargarDatos(); // Método tuyo para recargar el grid
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al eliminar: " + ex.Message);
+            }
+        }
+
+
+        private void frmPerfiles_Load(object sender, EventArgs e)
+        {
+            CargarDatos();
+        }
+
+        private void btNewPerfil_Click(object sender, EventArgs e)
+        {
+          
+        }
+
+        private void btCancelar_Click(object sender, EventArgs e)
+        {
+            Height = 255;
+            intEditar = 0;
+            gbPerfil.Visible = false;
+            txCodigo.Text = "";
+            chEstatus.Checked = true;
+        }
+
+        private void btAceptar_Click(object sender, EventArgs e)
+        {
+            
         }
 
         private void dgvPerfil_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)

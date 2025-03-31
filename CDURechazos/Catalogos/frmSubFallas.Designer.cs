@@ -35,9 +35,7 @@
             this.txNombre = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btCancelar = new System.Windows.Forms.Button();
-            this.btAceptar = new System.Windows.Forms.Button();
             this.dgvFallas = new System.Windows.Forms.DataGridView();
-            this.btNewSubFalla = new System.Windows.Forms.Button();
             this.cboFallasFiltro = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.gbSubFalla.SuspendLayout();
@@ -52,12 +50,11 @@
             this.gbSubFalla.Controls.Add(this.txNombre);
             this.gbSubFalla.Controls.Add(this.label2);
             this.gbSubFalla.Controls.Add(this.btCancelar);
-            this.gbSubFalla.Controls.Add(this.btAceptar);
             this.gbSubFalla.Location = new System.Drawing.Point(16, 477);
-            this.gbSubFalla.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.gbSubFalla.Margin = new System.Windows.Forms.Padding(6);
             this.gbSubFalla.Name = "gbSubFalla";
-            this.gbSubFalla.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.gbSubFalla.Size = new System.Drawing.Size(836, 285);
+            this.gbSubFalla.Padding = new System.Windows.Forms.Padding(6);
+            this.gbSubFalla.Size = new System.Drawing.Size(836, 277);
             this.gbSubFalla.TabIndex = 5;
             this.gbSubFalla.TabStop = false;
             this.gbSubFalla.Text = "Alta SubFalla";
@@ -76,7 +73,7 @@
             // 
             this.cboFallas.FormattingEnabled = true;
             this.cboFallas.Location = new System.Drawing.Point(160, 52);
-            this.cboFallas.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cboFallas.Margin = new System.Windows.Forms.Padding(4);
             this.cboFallas.Name = "cboFallas";
             this.cboFallas.Size = new System.Drawing.Size(384, 33);
             this.cboFallas.TabIndex = 8;
@@ -85,7 +82,7 @@
             // 
             this.chEstatus.AutoSize = true;
             this.chEstatus.Location = new System.Drawing.Point(168, 146);
-            this.chEstatus.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.chEstatus.Margin = new System.Windows.Forms.Padding(6);
             this.chEstatus.Name = "chEstatus";
             this.chEstatus.Size = new System.Drawing.Size(103, 29);
             this.chEstatus.TabIndex = 6;
@@ -95,7 +92,7 @@
             // txNombre
             // 
             this.txNombre.Location = new System.Drawing.Point(160, 96);
-            this.txNombre.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txNombre.Margin = new System.Windows.Forms.Padding(6);
             this.txNombre.Name = "txNombre";
             this.txNombre.Size = new System.Drawing.Size(506, 31);
             this.txNombre.TabIndex = 5;
@@ -113,25 +110,14 @@
             // 
             // btCancelar
             // 
-            this.btCancelar.Location = new System.Drawing.Point(424, 215);
-            this.btCancelar.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btCancelar.Location = new System.Drawing.Point(674, 213);
+            this.btCancelar.Margin = new System.Windows.Forms.Padding(6);
             this.btCancelar.Name = "btCancelar";
             this.btCancelar.Size = new System.Drawing.Size(150, 44);
             this.btCancelar.TabIndex = 1;
             this.btCancelar.Text = "Cancelar";
             this.btCancelar.UseVisualStyleBackColor = true;
             this.btCancelar.Click += new System.EventHandler(this.btCancelar_Click);
-            // 
-            // btAceptar
-            // 
-            this.btAceptar.Location = new System.Drawing.Point(208, 215);
-            this.btAceptar.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.btAceptar.Name = "btAceptar";
-            this.btAceptar.Size = new System.Drawing.Size(150, 44);
-            this.btAceptar.TabIndex = 0;
-            this.btAceptar.Text = "Aceptar";
-            this.btAceptar.UseVisualStyleBackColor = true;
-            this.btAceptar.Click += new System.EventHandler(this.btAceptar_Click);
             // 
             // dgvFallas
             // 
@@ -140,7 +126,7 @@
             this.dgvFallas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvFallas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvFallas.Location = new System.Drawing.Point(28, 152);
-            this.dgvFallas.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.dgvFallas.Margin = new System.Windows.Forms.Padding(6);
             this.dgvFallas.Name = "dgvFallas";
             this.dgvFallas.ReadOnly = true;
             this.dgvFallas.RowHeadersWidth = 82;
@@ -148,22 +134,11 @@
             this.dgvFallas.TabIndex = 4;
             this.dgvFallas.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSubFallas_CellContentDoubleClick);
             // 
-            // btNewSubFalla
-            // 
-            this.btNewSubFalla.Image = global::CDURechazos.Properties.Resources._1486564407_plus_green_81521;
-            this.btNewSubFalla.Location = new System.Drawing.Point(16, 15);
-            this.btNewSubFalla.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.btNewSubFalla.Name = "btNewSubFalla";
-            this.btNewSubFalla.Size = new System.Drawing.Size(84, 81);
-            this.btNewSubFalla.TabIndex = 3;
-            this.btNewSubFalla.UseVisualStyleBackColor = true;
-            this.btNewSubFalla.Click += new System.EventHandler(this.btNewSubFalla_Click);
-            // 
             // cboFallasFiltro
             // 
             this.cboFallasFiltro.FormattingEnabled = true;
             this.cboFallasFiltro.Location = new System.Drawing.Point(96, 108);
-            this.cboFallasFiltro.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cboFallasFiltro.Margin = new System.Windows.Forms.Padding(4);
             this.cboFallasFiltro.Name = "cboFallasFiltro";
             this.cboFallasFiltro.Size = new System.Drawing.Size(384, 33);
             this.cboFallasFiltro.TabIndex = 6;
@@ -187,14 +162,15 @@
             this.Controls.Add(this.cboFallasFiltro);
             this.Controls.Add(this.gbSubFalla);
             this.Controls.Add(this.dgvFallas);
-            this.Controls.Add(this.btNewSubFalla);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "frmSubFallas";
             this.Text = "SubFallas";
             this.Load += new System.EventHandler(this.frmSubFallas_Load);
+            this.Controls.SetChildIndex(this.dgvFallas, 0);
+            this.Controls.SetChildIndex(this.gbSubFalla, 0);
+            this.Controls.SetChildIndex(this.cboFallasFiltro, 0);
+            this.Controls.SetChildIndex(this.label3, 0);
             this.gbSubFalla.ResumeLayout(false);
             this.gbSubFalla.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFallas)).EndInit();
@@ -210,9 +186,7 @@
         private System.Windows.Forms.TextBox txNombre;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btCancelar;
-        private System.Windows.Forms.Button btAceptar;
         private System.Windows.Forms.DataGridView dgvFallas;
-        private System.Windows.Forms.Button btNewSubFalla;
         private System.Windows.Forms.ComboBox cboFallasFiltro;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
